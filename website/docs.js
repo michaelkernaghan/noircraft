@@ -34,9 +34,11 @@ cd my_first_snark
 ### 3. Write a Simple Circuit
 \`\`\`noir
 // src/main.nr
-fn main(secret: Field, public_hash: pub Field) {
-    let computed_hash = std::hash::pedersen_hash([secret]);
-    assert(computed_hash[0] == public_hash);
+use dep::std;
+
+fn main(secret: u64, public_hash: pub Field) {
+    let computed_hash: Field = std::hash::pedersen([secret as Field]);
+    assert(computed_hash == public_hash);
 }
 \`\`\`
 
@@ -90,9 +92,11 @@ SNARKs rely on polynomial commitments to encode computational statements as alge
 Prove you know the input to a hash function without revealing it.
 
 \`\`\`noir
+use dep::std;
+
 fn hash_preimage_proof(preimage: Field, hash: pub Field) {
-    let computed = std::hash::pedersen_hash([preimage]);
-    assert(computed[0] == hash);
+    let computed: Field = std::hash::pedersen([preimage]);
+    assert(computed == hash);
 }
 \`\`\`
 
@@ -707,20 +711,10 @@ Curated collection of the best Noir tutorials, tools, libraries, and community r
     function highlightCodeBlocks() {
         const codeBlocks = document.querySelectorAll('#docContent code');
         codeBlocks.forEach(block => {
-            let code = block.textContent;
-            
-            // Highlight Noir syntax
-            code = code.replace(/\b(fn|let|assert|use|dep|pub|Field|if|else|test|for|in)\b/g, 
-                '<span style="color: #ff6b9d;">$1</span>');
-            
-            code = code.replace(/\b(main|std|hash|pedersen_hash|println)\b/g, 
-                '<span style="color: #4ecdc4;">$1</span>');
-            
-            code = code.replace(/\/\/.*$/gm, '<span style="color: #95a5a6;">$&</span>');
-            code = code.replace(/\b\d+\b/g, '<span style="color: #f39c12;">$&</span>');
-            code = code.replace(/"[^"]*"/g, '<span style="color: #2ecc71;">$&</span>');
-            
-            block.innerHTML = code;
+            // Keep code as plain text to avoid HTML injection
+            // CSS handles the styling
+            block.style.fontFamily = "'Monaco', 'Menlo', 'Ubuntu Mono', monospace";
+            block.style.fontSize = "0.9rem";
         });
     }
     

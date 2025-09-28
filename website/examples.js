@@ -10,24 +10,24 @@ document.addEventListener('DOMContentLoaded', function() {
             code: `// Simple SNARK Demo - Basic Zero-Knowledge Proof
 use dep::std;
 
-fn main(secret: Field, public_hash: pub Field) {
+fn main(secret: u64, public_hash: pub Field) {
     // Prove we know the secret that hashes to public_hash
     // without revealing the secret itself
     
-    let computed_hash = std::hash::pedersen_hash([secret]);
-    assert(computed_hash[0] == public_hash);
+    let computed_hash: Field = std::hash::pedersen([secret as Field]);
+    assert(computed_hash == public_hash);
     
     // Additional constraint: secret must be within a certain range
-    assert(secret < 1000000);
+    assert(secret < 1000000u64);
     
-    std::println("✅ Proof verified: Secret knowledge confirmed!");
+    std::println("Proof verified: Secret knowledge confirmed!");
 }
 
 #[test]
 fn test_simple_snark() {
-    let secret = 12345;
-    let hash = std::hash::pedersen_hash([secret]);
-    main(secret, hash[0]);
+    let secret: u64 = 12345;
+    let hash: Field = std::hash::pedersen([secret as Field]);
+    main(secret, hash);
 }`
         },
         
@@ -42,32 +42,30 @@ use dep::std;
 fn main(
     private_input: Field,
     public_output: pub Field,
-    range_proof_value: Field,
+    range_proof_value: u32,
     merkle_root: pub Field
 ) {
     // 1. Hash constraint
-    let hash_result = std::hash::pedersen_hash([private_input]);
+    let hash_result: Field = std::hash::pedersen([private_input]);
     
     // 2. Range proof - prove value is within bounds
     assert(range_proof_value > 0);
     assert(range_proof_value < 100);
     
     // 3. Arithmetic constraints
-    let computation = private_input * range_proof_value + 42;
+    let computation = private_input * (range_proof_value as Field) + 42;
     assert(computation == public_output);
     
     // 4. Merkle tree membership proof (simplified)
-    let leaf_hash = std::hash::pedersen_hash([private_input]);
+    let leaf_hash: Field = std::hash::pedersen([private_input]);
     // In practice, you'd verify the full Merkle path
     
-    // 5. Conditional logic
-    if range_proof_value > 50 {
-        assert(private_input > 1000);
-    } else {
-        assert(private_input > 100);
-    }
+    // 5. Conditional logic with Field arithmetic
+    let condition = if range_proof_value > 50 { 1 } else { 0 };
+    let min_value = condition * 1000 + (1 - condition) * 100;
+    assert(private_input > min_value);
     
-    std::println("🔬 Advanced SNARK constraints verified!");
+    std::println("Advanced SNARK constraints verified!");
 }
 
 // Helper function for circuit optimization
@@ -78,7 +76,7 @@ fn optimized_multiply(a: Field, b: Field) -> Field {
 
 #[test] 
 fn test_snark_fundamentals() {
-    snark_fundamentals_demo(1234, 53508, 75, 0);
+    main(1234, 53508, 75, 0);
 }`
         },
         
@@ -106,21 +104,21 @@ fn main(
     assert(sender_balance >= transfer_amount);
     
     // 2. Verify sender ownership through commitment
-    let sender_hash = std::hash::pedersen_hash([sender_balance, sender_secret]);
-    assert(sender_hash[0] == sender_commitment);
+    let sender_hash: Field = std::hash::pedersen([sender_balance, sender_secret]);
+    assert(sender_hash == sender_commitment);
     
     // 3. Generate new commitment for recipient
-    let recipient_hash = std::hash::pedersen_hash([transfer_amount, recipient_address]);
-    assert(recipient_hash[0] == recipient_commitment);
+    let recipient_hash: Field = std::hash::pedersen([transfer_amount, recipient_address]);
+    assert(recipient_hash == recipient_commitment);
     
     // 4. Prevent double spending with nullifier
-    let computed_nullifier = std::hash::pedersen_hash([sender_commitment, sender_secret]);
-    assert(computed_nullifier[0] == nullifier);
+    let computed_nullifier: Field = std::hash::pedersen([sender_commitment, sender_secret]);
+    assert(computed_nullifier == nullifier);
     
     // 5. Ensure transfer amount is positive
     assert(transfer_amount > 0);
     
-    std::println("🔐 Private transfer verified on Aztec!");
+    std::println("Private transfer verified on Aztec!");
 }
 
 #[test]
@@ -130,12 +128,12 @@ fn test_aztec_privacy() {
     let recipient = 0x123456789;
     let secret = 0xabcdef;
     
-    let sender_commit = std::hash::pedersen_hash([balance, secret]);
-    let recipient_commit = std::hash::pedersen_hash([amount, recipient]);
-    let nullifier = std::hash::pedersen_hash([sender_commit[0], secret]);
+    let sender_commit: Field = std::hash::pedersen([balance, secret]);
+    let recipient_commit: Field = std::hash::pedersen([amount, recipient]);
+    let nullifier: Field = std::hash::pedersen([sender_commit, secret]);
     
     main(balance, amount, recipient, secret, 
-         sender_commit[0], recipient_commit[0], nullifier[0]);
+         sender_commit, recipient_commit, nullifier);
 }`
         },
         
@@ -154,12 +152,12 @@ fn main(
     is_valid: pub Field     // Public verification result
 ) {
     // 1. Hash the message for signing
-    let message_hash = std::hash::pedersen_hash([message]);
+    let message_hash: Field = std::hash::pedersen([message]);
     
     // 2. Verify BLS signature (simplified for demo)
     // In practice, this would use proper BLS curve operations
     let verification_result = verify_bls_signature(
-        message_hash[0], 
+        message_hash, 
         signature, 
         public_key
     );
@@ -168,7 +166,7 @@ fn main(
     assert(verification_result == is_valid);
     assert(is_valid == 1); // Must be valid
     
-    std::println("🔑 BLS signature verified successfully!");
+    std::println("BLS signature verified successfully!");
 }
 
 // Simplified BLS verification (placeholder for actual BLS ops)
@@ -243,29 +241,14 @@ fn test_bls_attestation() {
         URL.revokeObjectURL(url);
     };
     
-    // Simple syntax highlighting
+    // Simple syntax highlighting - safe version that doesn't break code
     function highlightCode() {
         const codeElement = document.getElementById('codeContent');
-        let code = codeElement.textContent;
-        
-        // Highlight keywords
-        code = code.replace(/\b(fn|let|assert|use|dep|pub|Field|if|else|test)\b/g, 
-            '<span style="color: #ff6b9d;">$1</span>');
-        
-        // Highlight types and functions
-        code = code.replace(/\b(main|std|hash|pedersen_hash|println)\b/g, 
-            '<span style="color: #4ecdc4;">$1</span>');
-        
-        // Highlight comments
-        code = code.replace(/\/\/.*$/gm, '<span style="color: #95a5a6;">$&</span>');
-        
-        // Highlight numbers
-        code = code.replace(/\b\d+\b/g, '<span style="color: #f39c12;">$&</span>');
-        
-        // Highlight strings
-        code = code.replace(/"[^"]*"/g, '<span style="color: #2ecc71;">$&</span>');
-        
-        codeElement.innerHTML = code;
+        // Keep code as plain text to avoid HTML injection issues
+        // The CSS will handle basic styling
+        codeElement.style.fontFamily = "'Monaco', 'Menlo', 'Ubuntu Mono', monospace";
+        codeElement.style.fontSize = "0.9rem";
+        codeElement.style.lineHeight = "1.6";
     }
     
     // Close modal when clicking outside

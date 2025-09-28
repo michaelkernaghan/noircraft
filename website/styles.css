@@ -6,34 +6,53 @@
 }
 
 :root {
-    /* WoW-inspired Dark Color Palette */
-    --primary-gold: #f4c430;
+    /* Enhanced Warcraft-inspired Color Palette */
+    --primary-gold: #ffd700;
+    --warcraft-gold: #d4af37;
+    --warcraft-bronze: #cd7f32;
     --primary-blue: #00d4ff;
+    --warcraft-blue: #4682b4;
     --dark-bg: #0a0a0a;
     --darker-bg: #050505;
     --card-bg: #1a1a1a;
+    --warcraft-stone: #2f2f2f;
+    --warcraft-wood: #8b4513;
     --border-gold: #d4af37;
     --text-light: #ffffff;
     --text-gray: #cccccc;
     --text-dim: #888888;
     --accent-purple: #8a2be2;
     --accent-red: #dc143c;
+    --warcraft-red: #8b0000;
     --glow-blue: #00bfff;
     --glow-purple: #9370db;
+    --glow-gold: rgba(255, 215, 0, 0.6);
+    --warcraft-green: #228b22;
+    --warcraft-orange: #ff8c00;
     
     /* Typography */
     --font-heading: 'Cinzel', serif;
     --font-body: 'Open Sans', sans-serif;
     
-    /* Shadows and Effects */
+    /* Enhanced Shadows and Effects */
     --shadow-glow: 0 0 20px rgba(0, 212, 255, 0.3);
-    --shadow-gold: 0 0 15px rgba(244, 196, 48, 0.4);
+    --shadow-gold: 0 0 15px rgba(255, 215, 0, 0.5);
     --shadow-dark: 0 4px 20px rgba(0, 0, 0, 0.5);
+    --shadow-warcraft: 0 0 25px rgba(255, 215, 0, 0.4);
+    --shadow-inset: inset 0 2px 4px rgba(0, 0, 0, 0.3);
+    --border-warcraft: 2px solid var(--warcraft-gold);
+    --border-ornate: 3px ridge var(--warcraft-bronze);
+    --texture-overlay: linear-gradient(45deg, rgba(139, 69, 19, 0.1) 25%, transparent 25%, transparent 75%, rgba(139, 69, 19, 0.1) 75%);
 }
 
 body {
     font-family: var(--font-body);
     background: var(--dark-bg);
+    background-image: 
+        radial-gradient(circle at 20% 80%, rgba(255, 215, 0, 0.05) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(70, 130, 180, 0.05) 0%, transparent 50%),
+        var(--texture-overlay);
+    background-size: 100% 100%, 100% 100%, 20px 20px;
     color: var(--text-light);
     line-height: 1.6;
     overflow-x: hidden;
@@ -52,9 +71,22 @@ body {
     width: 100%;
     background: rgba(10, 10, 10, 0.95);
     backdrop-filter: blur(10px);
-    border-bottom: 1px solid rgba(244, 196, 48, 0.2);
+    border-bottom: 2px solid var(--warcraft-gold);
+    box-shadow: 0 2px 10px rgba(255, 215, 0, 0.2);
     z-index: 1000;
     padding: 1rem 0;
+    position: relative;
+}
+
+.navbar::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(90deg, transparent 0%, rgba(255, 215, 0, 0.1) 50%, transparent 100%);
+    pointer-events: none;
 }
 
 .nav-container {
@@ -84,7 +116,11 @@ body {
     font-size: 1.5rem;
     font-weight: 700;
     color: var(--primary-gold);
-    text-shadow: 0 0 10px rgba(244, 196, 48, 0.5);
+    text-shadow: 
+        0 0 10px var(--glow-gold),
+        0 0 20px var(--glow-gold),
+        2px 2px 4px rgba(0, 0, 0, 0.8);
+    letter-spacing: 1px;
 }
 
 .nav-menu {
@@ -103,7 +139,10 @@ body {
 
 .nav-menu a:hover {
     color: var(--primary-gold);
-    text-shadow: 0 0 5px rgba(244, 196, 48, 0.5);
+    text-shadow: 
+        0 0 8px var(--glow-gold),
+        0 0 16px var(--glow-gold);
+    transform: translateY(-1px);
 }
 
 .nav-menu a::after {
@@ -141,9 +180,27 @@ body {
 }
 
 .btn-primary {
-    background: linear-gradient(135deg, var(--primary-gold), #e6b800);
+    background: linear-gradient(135deg, var(--primary-gold), var(--warcraft-bronze));
     color: var(--dark-bg);
     box-shadow: var(--shadow-gold);
+    border: 1px solid var(--warcraft-gold);
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-primary::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s ease;
+}
+
+.btn-primary:hover::before {
+    left: 100%;
 }
 
 .btn-primary:hover {
@@ -165,11 +222,15 @@ body {
 }
 
 .btn-hero-primary {
-    background: linear-gradient(135deg, var(--primary-gold), #e6b800);
+    background: linear-gradient(135deg, var(--primary-gold), var(--warcraft-bronze));
     color: var(--dark-bg);
     padding: 16px 32px;
     font-size: 1.1rem;
-    box-shadow: var(--shadow-gold);
+    box-shadow: var(--shadow-warcraft);
+    border: 2px solid var(--warcraft-gold);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    font-weight: 700;
+    letter-spacing: 0.5px;
 }
 
 .btn-hero-secondary {
@@ -208,7 +269,12 @@ body {
     position: relative;
     display: flex;
     align-items: center;
-    background: linear-gradient(135deg, var(--darker-bg) 0%, var(--dark-bg) 100%);
+    background: 
+        linear-gradient(135deg, rgba(5, 5, 5, 0.9) 0%, rgba(10, 10, 10, 0.9) 100%),
+        url('../assets/gfn-thursday-wow-clash-nv-blog-1280x680-no-copy.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
     overflow: hidden;
 }
 
@@ -219,9 +285,10 @@ body {
     width: 100%;
     height: 100%;
     background: 
-        radial-gradient(circle at 20% 80%, rgba(138, 43, 226, 0.1) 0%, transparent 50%),
-        radial-gradient(circle at 80% 20%, rgba(0, 212, 255, 0.1) 0%, transparent 50%),
-        radial-gradient(circle at 40% 40%, rgba(244, 196, 48, 0.05) 0%, transparent 50%);
+        radial-gradient(circle at 20% 80%, rgba(255, 215, 0, 0.15) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(70, 130, 180, 0.15) 0%, transparent 50%),
+        radial-gradient(circle at 40% 40%, rgba(139, 69, 19, 0.1) 0%, transparent 50%);
+    backdrop-filter: blur(1px);
 }
 
 .hero-overlay {
@@ -359,8 +426,9 @@ body {
 
 .contract-card {
     position: absolute;
-    background: rgba(26, 26, 26, 0.8);
-    border: 1px solid rgba(244, 196, 48, 0.3);
+    background: 
+        linear-gradient(145deg, rgba(26, 26, 26, 0.9), rgba(47, 47, 47, 0.8));
+    border: 2px solid var(--warcraft-bronze);
     border-radius: 8px;
     padding: 20px;
     backdrop-filter: blur(10px);
@@ -369,6 +437,22 @@ body {
     font-weight: 600;
     text-align: center;
     min-width: 120px;
+    box-shadow: 
+        0 4px 15px rgba(0, 0, 0, 0.4),
+        inset 0 1px 0 rgba(255, 215, 0, 0.2);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+}
+
+.contract-card::before {
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    right: 2px;
+    bottom: 2px;
+    border: 1px solid rgba(255, 215, 0, 0.3);
+    border-radius: 6px;
+    pointer-events: none;
 }
 
 .contract-card:nth-child(1) {
@@ -420,7 +504,24 @@ body {
     text-align: center;
     margin-bottom: 3rem;
     color: var(--primary-gold);
-    text-shadow: var(--shadow-gold);
+    text-shadow: 
+        var(--shadow-gold),
+        2px 2px 4px rgba(0, 0, 0, 0.8),
+        0 0 30px var(--glow-gold);
+    letter-spacing: 2px;
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, var(--warcraft-gold), transparent);
+    border-radius: 2px;
 }
 
 .news-grid {
@@ -607,7 +708,29 @@ body {
 /* Templates Section */
 .templates-section {
     padding: 80px 0;
-    background: var(--card-bg);
+    background: 
+        linear-gradient(135deg, var(--card-bg) 0%, var(--warcraft-stone) 50%, var(--card-bg) 100%),
+        url('../assets/Warcraft_-_Orcs_&_Humans_Coverart.png');
+    background-size: cover, 40% auto;
+    background-position: center, right bottom;
+    background-repeat: no-repeat;
+    position: relative;
+}
+
+.templates-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(10, 10, 10, 0.85);
+    z-index: 1;
+}
+
+.templates-section .container {
+    position: relative;
+    z-index: 2;
 }
 
 .templates-grid {
@@ -617,14 +740,32 @@ body {
 }
 
 .template-card {
-    background: var(--dark-bg);
-    border: 1px solid rgba(244, 196, 48, 0.2);
+    background: 
+        linear-gradient(145deg, var(--dark-bg) 0%, var(--warcraft-stone) 100%);
+    border: 2px solid var(--warcraft-bronze);
     border-radius: 12px;
     padding: 2rem;
     text-align: center;
     transition: all 0.3s ease;
     position: relative;
     overflow: hidden;
+    box-shadow: 
+        var(--shadow-inset),
+        0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.template-card::after {
+    content: '';
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    right: 4px;
+    bottom: 4px;
+    border: 1px solid var(--warcraft-gold);
+    border-radius: 8px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
 }
 
 .template-card::before {
@@ -646,7 +787,14 @@ body {
 .template-card:hover {
     transform: translateY(-10px);
     border-color: var(--primary-gold);
-    box-shadow: var(--shadow-gold);
+    box-shadow: 
+        var(--shadow-warcraft),
+        0 8px 25px rgba(0, 0, 0, 0.4),
+        inset 0 1px 0 rgba(255, 215, 0, 0.2);
+}
+
+.template-card:hover::after {
+    opacity: 1;
 }
 
 .template-icon {
@@ -690,9 +838,12 @@ body {
 }
 
 .feature-tag {
-    background: rgba(138, 43, 226, 0.2);
-    color: var(--accent-purple);
+    background: 
+        linear-gradient(135deg, rgba(255, 215, 0, 0.2), rgba(205, 127, 50, 0.2));
+    color: var(--warcraft-gold);
     padding: 4px 12px;
+    border: 1px solid rgba(255, 215, 0, 0.3);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
     border-radius: 12px;
     font-size: 0.8rem;
     font-weight: 600;
