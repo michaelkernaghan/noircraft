@@ -1,0 +1,19 @@
+age = ""
+expected_sum = ""
+hash_challenge = ""
+hash_preimage = ""
+max_age = ""
+merkle_root = ""
+message_hash = ""
+min_age = ""
+private_values = ["", "", "", "", ""]
+public_key = ""
+
+[merkle_proof]
+indices = ["", "", ""]
+leaf = ""
+path = ["", "", ""]
+
+[signature]
+r = ""
+s = ""

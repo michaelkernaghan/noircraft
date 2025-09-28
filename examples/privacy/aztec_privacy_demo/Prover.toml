@@ -1,0 +1,39 @@
+# Example inputs for Aztec Privacy Demo
+# This demonstrates a private transaction with hidden amounts and parties
+
+merkle_proofs = [["1", "2", "3", "4", "5", "6", "7", "8"], ["8", "7", "6", "5", "4", "3", "2", "1"]]
+merkle_root = "12345"  # Mock Merkle tree root
+nullifier_keys = ["999", "888"]  # Private keys for nullifier generation
+
+[transaction]
+fee = "5"           # 5 unit transaction fee (public)
+public_value = "0"  # No public transfer amount
+
+# Input notes being spent (private)
+[[transaction.input_notes]]
+value = "100"       # First input note: 100 units (hidden)
+owner = "12345"     # Owner address (hidden)
+nullifier = "0"     # Will be computed
+commitment = "22445" # Commitment hiding the note data
+
+[[transaction.input_notes]]  
+value = "50"        # Second input note: 50 units (hidden)
+owner = "12345"     # Same owner (hidden)
+nullifier = "0"     # Will be computed
+commitment = "22495" # Commitment hiding the note data
+
+# Output notes being created (private)
+[[transaction.output_notes]]
+value = "75"        # Recipient gets 75 units (hidden)
+owner = "67890"     # Recipient address (hidden)
+nullifier = "0"     # Not used for outputs
+commitment = "33575" # Commitment hiding the note data
+
+[[transaction.output_notes]]
+value = "70"        # Change back to sender: 70 units (hidden)
+owner = "12345"     # Original owner (hidden)  
+nullifier = "0"     # Not used for outputs
+commitment = "33570" # Commitment hiding the note data
+
+# Transaction proves: 100 + 50 = 75 + 70 + 5 (fee)
+# All amounts and parties remain private!

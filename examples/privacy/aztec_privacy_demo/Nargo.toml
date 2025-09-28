@@ -1,0 +1,10 @@
+[package]
+name = "aztec_privacy_demo"
+type = "bin"
+authors = ["Aztec Protocol Research"]
+
+[dependencies]
+# Future integration with Aztec-specific libraries:
+# aztec = { git = "https://github.com/AztecProtocol/aztec-packages" }
+# poseidon = { git = "https://github.com/noir-lang/poseidon" }
+# merkle_tree = { git = "https://github.com/privacy-scaling-explorations/zk-kit.noir" }

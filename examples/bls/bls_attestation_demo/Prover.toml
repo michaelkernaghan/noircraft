@@ -1,0 +1,28 @@
+baker_addresses = ["", "", "", "", ""]
+minimum_signatures = ""
+
+[attestation]
+block_height = ""
+data_hash = ""
+shard_id = ""
+timestamp = ""
+
+[[signatures]]
+public_key = ["", ""]
+signature = ["", ""]
+
+[[signatures]]
+public_key = ["", ""]
+signature = ["", ""]
+
+[[signatures]]
+public_key = ["", ""]
+signature = ["", ""]
+
+[[signatures]]
+public_key = ["", ""]
+signature = ["", ""]
+
+[[signatures]]
+public_key = ["", ""]
+signature = ["", ""]

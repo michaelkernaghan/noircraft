@@ -1,0 +1,12 @@
+[package]
+name = "bls_attestation_demo"
+type = "bin"
+authors = ["DALHousie Research Team"]
+
+[dependencies]
+# Available BLS libraries for Noir:
+# noir_bls_signature = { git = "https://github.com/onurinanc/noir-bls-signature" }
+# zk_kit_merkle_tree = { git = "https://github.com/privacy-scaling-explorations/zk-kit.noir" }
+
+# Note: The original noir-lang/bls12_381 repository is no longer available (404)
+# Alternative BLS implementations exist but may target older Noir versions
