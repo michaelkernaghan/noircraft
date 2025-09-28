@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contract Examples - Noircraft</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <img src="assets/images/noircraft-logo.png" alt="Noircraft" class="logo">
+                <span class="logo-text">NOIRCRAFT</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="examples.html" class="active">Examples</a></li>
+                <li><a href="docs.html">Documentation</a></li>
+                <li><a href="index.html#developers">Developers</a></li>
+            </ul>
+            <div class="nav-cta">
+                <button class="btn-secondary" onclick="window.location.href='docs.html'">View Docs</button>
+                <button class="btn-primary" onclick="window.location.href='index.html#developers'">Get Started</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero examples-hero">
+        <div class="hero-background">
+            <div class="hero-overlay"></div>
+        </div>
+        <div class="hero-content">
+            <div class="hero-announcement">
+                <span class="announcement-badge">LEARN</span>
+                <span>Master Zero-Knowledge Programming Through Practice</span>
+            </div>
+            <h1 class="hero-title">
+                <span class="highlight">Contract Examples</span> & Tutorials
+            </h1>
+            <p class="hero-subtitle-text">
+                Explore our comprehensive collection of Noir contract examples, from basic SNARK concepts to advanced privacy-preserving applications on the Aztec network.
+            </p>
+        </div>
+    </section>
+
+    <!-- Examples Categories -->
+    <section class="examples-categories">
+        <div class="container">
+            <h2 class="section-title">Learning Path</h2>
+            <div class="category-grid">
+                
+                <!-- SNARK Fundamentals -->
+                <div class="category-card">
+                    <div class="category-icon">⚡</div>
+                    <h3>SNARK Fundamentals</h3>
+                    <p>Master the basics of zero-knowledge proofs and circuit design</p>
+                    <div class="examples-list">
+                        <div class="example-item">
+                            <h4>Simple SNARK Demo</h4>
+                            <p>Basic zero-knowledge concepts and witness generation</p>
+                            <div class="example-tags">
+                                <span class="tag beginner">Beginner</span>
+                                <span class="tag snark">SNARK</span>
+                            </div>
+                            <button class="btn-example" onclick="showExample('simple_snark')">View Code</button>
+                        </div>
+                        <div class="example-item">
+                            <h4>SNARK Fundamentals</h4>
+                            <p>Core SNARK principles and constraint systems</p>
+                            <div class="example-tags">
+                                <span class="tag intermediate">Intermediate</span>
+                                <span class="tag snark">SNARK</span>
+                            </div>
+                            <button class="btn-example" onclick="showExample('snark_fundamentals')">View Code</button>
+                        </div>
+                        <div class="example-item">
+                            <h4>SNARK Systems Comparison</h4>
+                            <p>Compare PLONK, Groth16, and other proof systems</p>
+                            <div class="example-tags">
+                                <span class="tag advanced">Advanced</span>
+                                <span class="tag comparison">Comparison</span>
+                            </div>
+                            <button class="btn-example" onclick="showExample('snark_comparison')">View Code</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Privacy Examples -->
+                <div class="category-card">
+                    <div class="category-icon">🔐</div>
+                    <h3>Privacy Patterns</h3>
+                    <p>Learn privacy-preserving techniques and implementations</p>
+                    <div class="examples-list">
+                        <div class="example-item">
+                            <h4>Aztec Privacy Demo</h4>
+                            <p>Private transactions and confidential assets</p>
+                            <div class="example-tags">
+                                <span class="tag intermediate">Intermediate</span>
+                                <span class="tag aztec">Aztec</span>
+                            </div>
+                            <button class="btn-example" onclick="showExample('aztec_privacy')">View Code</button>
+                        </div>
+                        <div class="example-item">
+                            <h4>Privacy Preserving Examples</h4>
+                            <p>Commitments, nullifiers, and range proofs</p>
+                            <div class="example-tags">
+                                <span class="tag advanced">Advanced</span>
+                                <span class="tag privacy">Privacy</span>
+                            </div>
+                            <button class="btn-example" onclick="showExample('privacy_preserving')">View Code</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Aztec Network -->
+                <div class="category-card">
+                    <div class="category-icon">🌐</div>
+                    <h3>Aztec Network</h3>
+                    <p>Deploy and interact with contracts on Aztec's privacy-focused L2</p>
+                    <div class="examples-list">
+                        <div class="example-item">
+                            <h4>Prover-Verifier Workflow</h4>
+                            <p>Complete proof generation and verification pipeline</p>
+                            <div class="example-tags">
+                                <span class="tag intermediate">Intermediate</span>
+                                <span class="tag workflow">Workflow</span>
+                            </div>
+                            <button class="btn-example" onclick="showExample('prover_verifier')">View Code</button>
+                        </div>
+                        <div class="example-item">
+                            <h4>Transaction Signing Circuit</h4>
+                            <p>Secure transaction signing with zero-knowledge proofs</p>
+                            <div class="example-tags">
+                                <span class="tag advanced">Advanced</span>
+                                <span class="tag signatures">Signatures</span>
+                            </div>
+                            <button class="btn-example" onclick="showExample('transaction_signing')">View Code</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- BLS Signatures -->
+                <div class="category-card">
+                    <div class="category-icon">🔑</div>
+                    <h3>BLS Signatures</h3>
+                    <p>Advanced cryptographic signatures and aggregation</p>
+                    <div class="examples-list">
+                        <div class="example-item">
+                            <h4>BLS Attestation Demo</h4>
+                            <p>Basic BLS signature generation and verification</p>
+                            <div class="example-tags">
+                                <span class="tag beginner">Beginner</span>
+                                <span class="tag bls">BLS</span>
+                            </div>
+                            <button class="btn-example" onclick="showExample('bls_attestation')">View Code</button>
+                        </div>
+                        <div class="example-item">
+                            <h4>Enhanced BLS Attestation</h4>
+                            <p>Advanced BLS features and threshold signatures</p>
+                            <div class="example-tags">
+                                <span class="tag advanced">Advanced</span>
+                                <span class="tag bls">BLS</span>
+                            </div>
+                            <button class="btn-example" onclick="showExample('enhanced_bls')">View Code</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Code Modal -->
+    <div id="codeModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="modalTitle">Example Code</h3>
+                <span class="close" onclick="closeModal()">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div class="code-window">
+                    <div class="code-header">
+                        <span id="codeFileName">main.nr</span>
+                        <div class="code-controls">
+                            <span class="control"></span>
+                            <span class="control"></span>
+                            <span class="control"></span>
+                        </div>
+                    </div>
+                    <div class="code-content">
+                        <pre><code id="codeContent">// Code will be loaded here</code></pre>
+                    </div>
+                </div>
+                <div class="example-description">
+                    <h4>About This Example</h4>
+                    <p id="exampleDescription">Description will be loaded here</p>
+                    <div class="example-actions">
+                        <button class="btn-primary" onclick="copyCode()">Copy Code</button>
+                        <button class="btn-secondary" onclick="downloadExample()">Download Project</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <img src="assets/images/noircraft-logo.png" alt="Noircraft" class="footer-logo-img">
+                        <span class="logo-text">NOIRCRAFT</span>
+                    </div>
+                    <p>Forging the future of privacy-preserving smart contracts on the Aztec network.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Examples</h4>
+                    <ul>
+                        <li><a href="#snark">SNARK Fundamentals</a></li>
+                        <li><a href="#privacy">Privacy Patterns</a></li>
+                        <li><a href="#aztec">Aztec Network</a></li>
+                        <li><a href="#bls">BLS Signatures</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="docs.html">Documentation</a></li>
+                        <li><a href="index.html">Contract Templates</a></li>
+                        <li><a href="index.html#developers">Developer Tools</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Community</h4>
+                    <ul>
+                        <li><a href="#">Discord</a></li>
+                        <li><a href="#">GitHub</a></li>
+                        <li><a href="#">Twitter</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Noircraft. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="examples.js"></script>
+</body>
+</html>

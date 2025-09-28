@@ -228,15 +228,12 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Wallet connection demo (educational)
+    // Navigation button functionality
     const connectWalletBtns = document.querySelectorAll('.btn-secondary');
     connectWalletBtns.forEach(btn => {
         if (btn.textContent.includes('View Examples')) {
             btn.addEventListener('click', function() {
-                // Scroll to examples section
-                document.querySelector('.templates-section').scrollIntoView({
-                    behavior: 'smooth'
-                });
+                window.location.href = 'examples.html';
             });
         }
     });
@@ -245,10 +242,24 @@ document.addEventListener('DOMContentLoaded', function() {
     getStartedBtns.forEach(btn => {
         if (btn.textContent.includes('Get Started')) {
             btn.addEventListener('click', function() {
-                // Scroll to developer section
-                document.querySelector('.developer-section').scrollIntoView({
+                window.location.href = 'docs.html';
+            });
+        }
+    });
+
+    // Hero action buttons
+    const heroButtons = document.querySelectorAll('.btn-hero-primary, .btn-hero-secondary');
+    heroButtons.forEach(btn => {
+        if (btn.textContent.includes('Deploy Contract')) {
+            btn.addEventListener('click', function() {
+                document.querySelector('.templates-section').scrollIntoView({
                     behavior: 'smooth'
                 });
+            });
+        }
+        if (btn.textContent.includes('Learn More')) {
+            btn.addEventListener('click', function() {
+                window.location.href = 'docs.html';
             });
         }
     });

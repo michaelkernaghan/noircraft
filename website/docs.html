@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documentation - Noircraft</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <img src="assets/images/noircraft-logo.png" alt="Noircraft" class="logo">
+                <span class="logo-text">NOIRCRAFT</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="examples.html">Examples</a></li>
+                <li><a href="docs.html" class="active">Documentation</a></li>
+                <li><a href="index.html#developers">Developers</a></li>
+            </ul>
+            <div class="nav-cta">
+                <button class="btn-secondary" onclick="window.location.href='examples.html'">View Examples</button>
+                <button class="btn-primary" onclick="window.location.href='index.html#developers'">Get Started</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero docs-hero">
+        <div class="hero-background">
+            <div class="hero-overlay"></div>
+        </div>
+        <div class="hero-content">
+            <div class="hero-announcement">
+                <span class="announcement-badge">DOCS</span>
+                <span>Comprehensive Guides for Zero-Knowledge Development</span>
+            </div>
+            <h1 class="hero-title">
+                <span class="highlight">Documentation</span> & Learning Resources
+            </h1>
+            <p class="hero-subtitle-text">
+                Master Noir programming and zero-knowledge proof development with our comprehensive guides, tutorials, and research documentation.
+            </p>
+        </div>
+    </section>
+
+    <!-- Documentation Categories -->
+    <section class="docs-categories">
+        <div class="container">
+            <h2 class="section-title">Learning Resources</h2>
+            
+            <!-- Quick Start Guides -->
+            <div class="docs-section">
+                <h3 class="docs-section-title">🚀 Quick Start Guides</h3>
+                <div class="docs-grid">
+                    <div class="doc-card beginner">
+                        <div class="doc-icon">⚡</div>
+                        <h4>SNARK Quick Start</h4>
+                        <p>Get up and running with zero-knowledge proofs in minutes. Perfect for beginners to understand the fundamentals.</p>
+                        <div class="doc-meta">
+                            <span class="difficulty beginner">Beginner</span>
+                            <span class="read-time">5 min read</span>
+                        </div>
+                        <button class="btn-doc" onclick="loadDoc('snark_quick_start')">Read Guide</button>
+                    </div>
+                    <div class="doc-card intermediate">
+                        <div class="doc-icon">🔍</div>
+                        <h4>SNARK Exploration Guide</h4>
+                        <p>Deep dive into zero-knowledge proof systems, constraint systems, and advanced cryptographic concepts.</p>
+                        <div class="doc-meta">
+                            <span class="difficulty intermediate">Intermediate</span>
+                            <span class="read-time">15 min read</span>
+                        </div>
+                        <button class="btn-doc" onclick="loadDoc('snark_exploration')">Read Guide</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Development Guides -->
+            <div class="docs-section">
+                <h3 class="docs-section-title">🛠️ Development Guides</h3>
+                <div class="docs-grid">
+                    <div class="doc-card intermediate">
+                        <div class="doc-icon">⚙️</div>
+                        <h4>Noir Barretenberg Guide</h4>
+                        <p>Complete development setup and workflow for building Noir applications with the Barretenberg proving backend.</p>
+                        <div class="doc-meta">
+                            <span class="difficulty intermediate">Intermediate</span>
+                            <span class="read-time">20 min read</span>
+                        </div>
+                        <button class="btn-doc" onclick="loadDoc('noir_barretenberg')">Read Guide</button>
+                    </div>
+                    <div class="doc-card beginner">
+                        <div class="doc-icon">🔐</div>
+                        <h4>Privacy Demo Guide</h4>
+                        <p>Step-by-step tutorial for implementing your first privacy-preserving smart contract with Noir.</p>
+                        <div class="doc-meta">
+                            <span class="difficulty beginner">Beginner</span>
+                            <span class="read-time">12 min read</span>
+                        </div>
+                        <button class="btn-doc" onclick="loadDoc('privacy_demo')">Read Guide</button>
+                    </div>
+                    <div class="doc-card intermediate">
+                        <div class="doc-icon">🌐</div>
+                        <h4>Aztec System Guide</h4>
+                        <p>Comprehensive overview of the Aztec network architecture, privacy features, and development ecosystem.</p>
+                        <div class="doc-meta">
+                            <span class="difficulty intermediate">Intermediate</span>
+                            <span class="read-time">25 min read</span>
+                        </div>
+                        <button class="btn-doc" onclick="loadDoc('aztec_system')">Read Guide</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Technical Deep Dives -->
+            <div class="docs-section">
+                <h3 class="docs-section-title">🎓 Technical Deep Dives</h3>
+                <div class="docs-grid">
+                    <div class="doc-card advanced">
+                        <div class="doc-icon">🔬</div>
+                        <h4>PLONK Explained</h4>
+                        <p>In-depth explanation of the PLONK proving system, its mathematical foundations, and practical applications.</p>
+                        <div class="doc-meta">
+                            <span class="difficulty advanced">Advanced</span>
+                            <span class="read-time">30 min read</span>
+                        </div>
+                        <button class="btn-doc" onclick="loadDoc('plonk_explained')">Read Guide</button>
+                    </div>
+                    <div class="doc-card expert">
+                        <div class="doc-icon">🎓</div>
+                        <h4>Academic Research</h4>
+                        <p>University-level analysis of PLONK, Noir, and Aztec technologies with mathematical proofs and formal analysis.</p>
+                        <div class="doc-meta">
+                            <span class="difficulty expert">Expert</span>
+                            <span class="read-time">45 min read</span>
+                        </div>
+                        <button class="btn-doc" onclick="loadDoc('academic_research')">Read Guide</button>
+                    </div>
+                    <div class="doc-card intermediate">
+                        <div class="doc-icon">🌟</div>
+                        <h4>Aztec Ecosystem Summary</h4>
+                        <p>Comprehensive overview of the Aztec ecosystem, including tools, libraries, and development resources.</p>
+                        <div class="doc-meta">
+                            <span class="difficulty intermediate">Intermediate</span>
+                            <span class="read-time">18 min read</span>
+                        </div>
+                        <button class="btn-doc" onclick="loadDoc('aztec_ecosystem')">Read Guide</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Resources & References -->
+            <div class="docs-section">
+                <h3 class="docs-section-title">📚 Resources & References</h3>
+                <div class="docs-grid">
+                    <div class="doc-card reference">
+                        <div class="doc-icon">⭐</div>
+                        <h4>Awesome Noir Resources</h4>
+                        <p>Curated collection of the best Noir tutorials, tools, libraries, and community resources.</p>
+                        <div class="doc-meta">
+                            <span class="difficulty reference">Reference</span>
+                            <span class="read-time">Browse</span>
+                        </div>
+                        <button class="btn-doc" onclick="loadDoc('awesome_noir')">Browse Resources</button>
+                    </div>
+                    <div class="doc-card reference">
+                        <div class="doc-icon">🔑</div>
+                        <h4>BLS Library Status</h4>
+                        <p>Current status and implementation details of BLS signature libraries in the Noir ecosystem.</p>
+                        <div class="doc-meta">
+                            <span class="difficulty reference">Reference</span>
+                            <span class="read-time">8 min read</span>
+                        </div>
+                        <button class="btn-doc" onclick="loadDoc('bls_status')">Read Status</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Document Viewer Modal -->
+    <div id="docModal" class="modal">
+        <div class="modal-content doc-modal">
+            <div class="modal-header">
+                <h3 id="docTitle">Documentation</h3>
+                <span class="close" onclick="closeDocModal()">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div class="doc-content" id="docContent">
+                    <!-- Document content will be loaded here -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <img src="assets/images/noircraft-logo.png" alt="Noircraft" class="footer-logo-img">
+                        <span class="logo-text">NOIRCRAFT</span>
+                    </div>
+                    <p>Comprehensive documentation for privacy-preserving smart contract development.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Start</h4>
+                    <ul>
+                        <li><a href="#" onclick="loadDoc('snark_quick_start')">SNARK Basics</a></li>
+                        <li><a href="#" onclick="loadDoc('privacy_demo')">Privacy Tutorial</a></li>
+                        <li><a href="#" onclick="loadDoc('aztec_system')">Aztec Guide</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Advanced</h4>
+                    <ul>
+                        <li><a href="#" onclick="loadDoc('plonk_explained')">PLONK Deep Dive</a></li>
+                        <li><a href="#" onclick="loadDoc('academic_research')">Research Papers</a></li>
+                        <li><a href="#" onclick="loadDoc('noir_barretenberg')">Development Setup</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="#" onclick="loadDoc('awesome_noir')">Curated Links</a></li>
+                        <li><a href="examples.html">Code Examples</a></li>
+                        <li><a href="index.html">Contract Templates</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Noircraft. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="docs.js"></script>
+</body>
+</html>
