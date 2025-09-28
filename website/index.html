@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Noircraft - Privacy Contracts on Aztec</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+        <div class="nav-logo">
+            <img src="assets/images/noircraft-logo.png" alt="Noircraft" class="logo">
+            <span class="logo-text">NOIRCRAFT</span>
+        </div>
+            <ul class="nav-menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#contracts">Contracts</a></li>
+                <li><a href="#privacy">Privacy</a></li>
+                <li><a href="#developers">Developers</a></li>
+                <li><a href="#community">Community</a></li>
+            </ul>
+            <div class="nav-cta">
+                <button class="btn-secondary">Connect Wallet</button>
+                <button class="btn-primary">Deploy Contract</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-background">
+            <div class="hero-overlay"></div>
+        </div>
+        <div class="hero-content">
+            <div class="hero-announcement">
+                <span class="announcement-badge">NEW</span>
+                <span>Noir Midnight: Zero-Knowledge Contracts Revealed!</span>
+            </div>
+            <div class="hero-title-container">
+                <img src="assets/images/noircraft-title.png" alt="Noircraft Title" class="hero-title-image">
+                <h1 class="hero-title">
+                    Return to the realm of <span class="highlight">privacy</span> as Aztec's invasion of blockchain begins, and the <span class="highlight">Zero-Knowledge storm</span> threatens to cover the world in transparency.
+                </h1>
+            </div>
+            <div class="hero-actions">
+                <button class="btn-hero-primary">Deploy Contract</button>
+                <button class="btn-hero-secondary">Learn More</button>
+            </div>
+        </div>
+        <div class="hero-visual">
+            <div class="floating-contracts">
+                <div class="contract-card">
+                    <div class="contract-glow"></div>
+                    <span>Private Voting</span>
+                </div>
+                <div class="contract-card">
+                    <div class="contract-glow"></div>
+                    <span>Anonymous Auctions</span>
+                </div>
+                <div class="contract-card">
+                    <div class="contract-glow"></div>
+                    <span>Confidential Assets</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Latest News Section -->
+    <section class="news-section">
+        <div class="container">
+            <h2 class="section-title">Latest Privacy Updates</h2>
+            <div class="news-grid">
+                <div class="news-item featured">
+                    <div class="news-image">
+                        <img src="assets/noir-midnight.jpg" alt="Noir Midnight">
+                    </div>
+                    <div class="news-content">
+                        <span class="news-date">September 28, 2025</span>
+                        <h3>Noir Midnight: Advanced Privacy Contracts Now Live</h3>
+                        <p>Experience the next generation of zero-knowledge smart contracts with enhanced privacy features and optimized proving times.</p>
+                        <a href="#" class="news-link">Read More</a>
+                    </div>
+                </div>
+                <div class="news-item">
+                    <span class="news-date">September 26, 2025</span>
+                    <h4>Aztec Network Upgrade: 10x Faster Proofs</h4>
+                    <a href="#" class="news-link">Learn More</a>
+                </div>
+                <div class="news-item">
+                    <span class="news-date">September 24, 2025</span>
+                    <h4>New Developer Tools: Noir IDE Integration</h4>
+                    <a href="#" class="news-link">Learn More</a>
+                </div>
+                <div class="news-item">
+                    <span class="news-date">September 22, 2025</span>
+                    <h4>Community Spotlight: DeFi Privacy Solutions</h4>
+                    <a href="#" class="news-link">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pre-Deploy Section -->
+    <section class="pre-deploy-section">
+        <div class="container">
+            <div class="pre-deploy-content">
+                <div class="pre-deploy-text">
+                    <h2>Deploy Your Privacy Contract</h2>
+                    <p>The second chapter of The Privacy Saga™ begins. You'll return to the legendary realm of zero-knowledge then adventure through new and reimagined contract templates in search of new privacy primitives in the battle against surveillance.</p>
+                    <div class="feature-list">
+                        <div class="feature-item">
+                            <div class="feature-icon">🔒</div>
+                            <span>Zero-Knowledge Proofs</span>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">⚡</div>
+                            <span>Lightning Fast Verification</span>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">🛡️</div>
+                            <span>Privacy-First Design</span>
+                        </div>
+                    </div>
+                    <button class="btn-primary large">Choose Your Contract</button>
+                </div>
+                <div class="pre-deploy-visual">
+                    <div class="contract-preview">
+                        <div class="code-window">
+                            <div class="code-header">
+                                <span class="code-title">private_voting.nr</span>
+                                <div class="code-controls">
+                                    <span class="control"></span>
+                                    <span class="control"></span>
+                                    <span class="control"></span>
+                                </div>
+                            </div>
+                            <div class="code-content">
+                                <pre><code>fn main(
+    vote: Field,
+    nullifier: Field,
+    commitment: pub Field
+) {
+    // Prove vote validity
+    assert(vote < 3);
+    
+    // Generate nullifier
+    let hash = pedersen_hash([vote, nullifier]);
+    assert(hash == commitment);
+}</code></pre>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contract Templates Section -->
+    <section class="templates-section">
+        <div class="container">
+            <h2 class="section-title">Privacy Contract Templates</h2>
+            <div class="templates-grid">
+                <div class="template-card">
+                    <div class="template-icon">
+                        <div class="icon-glow"></div>
+                        🗳️
+                    </div>
+                    <h3>Private Voting</h3>
+                    <p>Implement anonymous voting systems with zero-knowledge proofs ensuring vote privacy while maintaining verifiability.</p>
+                    <div class="template-features">
+                        <span class="feature-tag">Anonymous</span>
+                        <span class="feature-tag">Verifiable</span>
+                        <span class="feature-tag">Scalable</span>
+                    </div>
+                    <button class="btn-template">Deploy Now</button>
+                </div>
+                
+                <div class="template-card">
+                    <div class="template-icon">
+                        <div class="icon-glow"></div>
+                        🏛️
+                    </div>
+                    <h3>Anonymous Auctions</h3>
+                    <p>Create sealed-bid auctions where bids remain private until reveal, ensuring fair price discovery.</p>
+                    <div class="template-features">
+                        <span class="feature-tag">Sealed Bids</span>
+                        <span class="feature-tag">Fair</span>
+                        <span class="feature-tag">Transparent</span>
+                    </div>
+                    <button class="btn-template">Deploy Now</button>
+                </div>
+                
+                <div class="template-card">
+                    <div class="template-icon">
+                        <div class="icon-glow"></div>
+                        💰
+                    </div>
+                    <h3>Private Assets</h3>
+                    <p>Manage confidential asset transfers with hidden amounts and recipients while proving transaction validity.</p>
+                    <div class="template-features">
+                        <span class="feature-tag">Confidential</span>
+                        <span class="feature-tag">Compliant</span>
+                        <span class="feature-tag">Efficient</span>
+                    </div>
+                    <button class="btn-template">Deploy Now</button>
+                </div>
+                
+                <div class="template-card">
+                    <div class="template-icon">
+                        <div class="icon-glow"></div>
+                        🔐
+                    </div>
+                    <h3>Identity Verification</h3>
+                    <p>Prove identity attributes without revealing personal information using zero-knowledge credentials.</p>
+                    <div class="template-features">
+                        <span class="feature-tag">Private</span>
+                        <span class="feature-tag">Selective</span>
+                        <span class="feature-tag">Secure</span>
+                    </div>
+                    <button class="btn-template">Deploy Now</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Developer Section -->
+    <section class="developer-section" id="developers">
+        <div class="container">
+            <div class="developer-content">
+                <div class="developer-text">
+                    <h2>Start Your Privacy Quest</h2>
+                    <p>Join thousands of developers building the future of privacy-preserving applications. Get started with our comprehensive tools and documentation.</p>
+                    <div class="developer-stats">
+                        <div class="stat">
+                            <div class="stat-number">10,000+</div>
+                            <div class="stat-label">Contracts Deployed</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-number">500+</div>
+                            <div class="stat-label">Active Developers</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-number">99.9%</div>
+                            <div class="stat-label">Uptime</div>
+                        </div>
+                    </div>
+                    <div class="developer-actions">
+                        <button class="btn-primary">Get Started</button>
+                        <button class="btn-secondary">View Docs</button>
+                    </div>
+                </div>
+                <div class="developer-visual">
+                    <div class="terminal-window">
+                        <div class="terminal-header">
+                            <span>noir-cli</span>
+                        </div>
+                        <div class="terminal-content">
+                            <div class="terminal-line">
+                                <span class="prompt">$</span>
+                                <span class="command">nargo new private_voting</span>
+                            </div>
+                            <div class="terminal-line">
+                                <span class="output">Created new Noir project</span>
+                            </div>
+                            <div class="terminal-line">
+                                <span class="prompt">$</span>
+                                <span class="command">nargo prove</span>
+                            </div>
+                            <div class="terminal-line">
+                                <span class="output">Proof generated successfully ✓</span>
+                            </div>
+                            <div class="terminal-line">
+                                <span class="prompt">$</span>
+                                <span class="command typing">nargo deploy --network aztec</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <img src="assets/images/noircraft-logo.png" alt="Noircraft" class="footer-logo-img">
+                        <span class="logo-text">NOIRCRAFT</span>
+                    </div>
+                    <p>Forging the future of privacy-preserving smart contracts on the Aztec network.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link">Twitter</a>
+                        <a href="#" class="social-link">Discord</a>
+                        <a href="#" class="social-link">GitHub</a>
+                        <a href="#" class="social-link">Telegram</a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Contracts</h4>
+                    <ul>
+                        <li><a href="#">Private Voting</a></li>
+                        <li><a href="#">Anonymous Auctions</a></li>
+                        <li><a href="#">Private Assets</a></li>
+                        <li><a href="#">Identity Verification</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Developers</h4>
+                    <ul>
+                        <li><a href="#">Documentation</a></li>
+                        <li><a href="#">Tutorials</a></li>
+                        <li><a href="#">API Reference</a></li>
+                        <li><a href="#">Examples</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Community</h4>
+                    <ul>
+                        <li><a href="#">Discord</a></li>
+                        <li><a href="#">Forum</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Events</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Noircraft. All rights reserved. | Privacy Policy | Terms of Service</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
