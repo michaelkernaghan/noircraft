@@ -42,8 +42,12 @@
             <div class="hero-title-container">
                 <img src="assets/images/noircraft-title.png" alt="Noircraft Title" class="hero-title-image">
                 <h1 class="hero-title">
-                    Return to the realm of <span class="highlight">privacy</span> as Aztec's invasion of blockchain begins, and the <span class="highlight">Zero-Knowledge storm</span> threatens to cover the world in transparency.
+                    <span class="highlight">Noir</span> is a domain-specific language for creating and verifying <span class="highlight">zero-knowledge proofs</span>. It compiles to <strong>ACIR</strong> — the <em>Abstract Circuit Intermediate Representation</em>, a backend-agnostic IR for zk circuits.
                 </h1>
+                <div class="hero-subtitle">
+                    <p>In practice, <code>nargo compile</code> outputs a JSON artifact containing the circuit's <strong>ACIR</strong> plus its <strong>ABI</strong>. That ACIR is then fed to a proving backend (e.g., Barretenberg) to generate proofs and verifiers for privacy-preserving smart contracts.</p>
+                    <p class="technical-note"><em>Note:</em> Noir can also emit <strong>Brillig</strong> bytecode for <em>unconstrained</em> functions; Brillig runs in the solver/VM to compute helper values and <strong>does not</strong> create constraints in the circuit.</p>
+                </div>
             </div>
             <div class="hero-actions">
                 <button class="btn-hero-primary">Deploy Contract</button>
