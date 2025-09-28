@@ -228,6 +228,31 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
+    // Wallet connection demo (educational)
+    const connectWalletBtns = document.querySelectorAll('.btn-secondary');
+    connectWalletBtns.forEach(btn => {
+        if (btn.textContent.includes('View Examples')) {
+            btn.addEventListener('click', function() {
+                // Scroll to examples section
+                document.querySelector('.templates-section').scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        }
+    });
+
+    const getStartedBtns = document.querySelectorAll('.btn-primary');
+    getStartedBtns.forEach(btn => {
+        if (btn.textContent.includes('Get Started')) {
+            btn.addEventListener('click', function() {
+                // Scroll to developer section
+                document.querySelector('.developer-section').scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        }
+    });
+
     // Button click effects
     const buttons = document.querySelectorAll('button, .btn-primary, .btn-secondary');
     buttons.forEach(button => {
