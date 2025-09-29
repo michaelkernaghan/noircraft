@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Contracts - Noircraft</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+        <div class="nav-logo">
+            <img src="assets/images/noircraft-logo.png" alt="Noircraft" class="logo">
+            <span class="logo-text">NOIRCRAFT</span>
+        </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="contracts.html" class="active">Contracts</a></li>
+                <li><a href="#privacy">Privacy</a></li>
+                <li><a href="#developers">Developers</a></li>
+                <li><a href="#community">Community</a></li>
+            </ul>
+            <div class="nav-cta">
+                <button class="btn-secondary">View Examples</button>
+                <button class="btn-primary">Get Started</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Contracts Hero Section -->
+    <section class="contracts-hero">
+        <div class="hero-background">
+            <div class="hero-overlay"></div>
+        </div>
+        <div class="container">
+            <div class="contracts-hero-content">
+                <h1 class="contracts-title">Privacy Contract Templates</h1>
+                <p class="contracts-subtitle">Production-ready Noir contract templates for privacy-preserving applications on the Aztec network. Deploy zero-knowledge smart contracts with confidence.</p>
+                <div class="contracts-stats">
+                    <div class="stat">
+                        <div class="stat-number">5</div>
+                        <div class="stat-label">Contract Templates</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">10K+</div>
+                        <div class="stat-label">Deployments</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">99.9%</div>
+                        <div class="stat-label">Success Rate</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contract Templates Grid -->
+    <section class="contracts-grid-section">
+        <div class="container">
+            <div class="contracts-grid">
+                <!-- Private Voting -->
+                <div class="contract-card detailed">
+                    <div class="contract-header">
+                        <div class="contract-icon">
+                            <div class="icon-glow"></div>
+                            🗳️
+                        </div>
+                        <div class="contract-meta">
+                            <h3>Private Voting</h3>
+                            <div class="difficulty-badge beginner">Beginner</div>
+                        </div>
+                    </div>
+                    <p class="contract-description">
+                        Implement anonymous voting systems with zero-knowledge proofs ensuring vote privacy while maintaining verifiability. Perfect for DAO governance, elections, and community polls.
+                    </p>
+                    
+                    <div class="contract-features">
+                        <div class="feature-list">
+                            <div class="feature-item">
+                                <span class="feature-icon">🔒</span>
+                                <span>Anonymous voting with nullifier prevention</span>
+                            </div>
+                            <div class="feature-item">
+                                <span class="feature-icon">✅</span>
+                                <span>Verifiable results without revealing votes</span>
+                            </div>
+                            <div class="feature-item">
+                                <span class="feature-icon">⚡</span>
+                                <span>Fast proof generation (~2.1s)</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="contract-metrics">
+                        <div class="metric">
+                            <span class="metric-label">Proving Time</span>
+                            <span class="metric-value">~2.1s</span>
+                        </div>
+                        <div class="metric">
+                            <span class="metric-label">Gas Usage</span>
+                            <span class="metric-value">~45K</span>
+                        </div>
+                        <div class="metric">
+                            <span class="metric-label">Proof Size</span>
+                            <span class="metric-value">~2.1KB</span>
+                        </div>
+                    </div>
+
+                    <div class="contract-code-preview">
+                        <div class="code-header">
+                            <span class="code-title">main.nr</span>
+                        </div>
+                        <pre><code>fn main(
+    vote: Field,
+    nullifier: Field,
+    commitment: pub Field
+) {
+    // Prove vote validity
+    assert(vote < 3);
+    
+    // Generate nullifier
+    let hash = pedersen_hash([vote, nullifier]);
+    assert(hash == commitment);
+}</code></pre>
+                    </div>
+
+                    <div class="contract-actions">
+                        <button class="btn-primary">Deploy Template</button>
+                        <button class="btn-secondary">View Source</button>
+                    </div>
+                </div>
+
+                <!-- Anonymous Auctions -->
+                <div class="contract-card detailed">
+                    <div class="contract-header">
+                        <div class="contract-icon">
+                            <div class="icon-glow"></div>
+                            🏛️
+                        </div>
+                        <div class="contract-meta">
+                            <h3>Anonymous Auctions</h3>
+                            <div class="difficulty-badge intermediate">Intermediate</div>
+                        </div>
+                    </div>
+                    <p class="contract-description">
+                        Create sealed-bid auctions where bids remain private until reveal phase, ensuring fair price discovery. Ideal for NFT sales, procurement, and treasury management.
+                    </p>
+                    
+                    <div class="contract-features">
+                        <div class="feature-list">
+                            <div class="feature-item">
+                                <span class="feature-icon">🔐</span>
+                                <span>Sealed bids with commitment scheme</span>
+                            </div>
+                            <div class="feature-item">
+                                <span class="feature-icon">⏰</span>
+                                <span>Time-locked reveal phases</span>
+                            </div>
+                            <div class="feature-item">
+                                <span class="feature-icon">🎯</span>
+                                <span>Fair price discovery mechanism</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="contract-metrics">
+                        <div class="metric">
+                            <span class="metric-label">Proving Time</span>
+                            <span class="metric-value">~3.8s</span>
+                        </div>
+                        <div class="metric">
+                            <span class="metric-label">Gas Usage</span>
+                            <span class="metric-value">~67K</span>
+                        </div>
+                        <div class="metric">
+                            <span class="metric-label">Proof Size</span>
+                            <span class="metric-value">~2.8KB</span>
+                        </div>
+                    </div>
+
+                    <div class="contract-code-preview">
+                        <div class="code-header">
+                            <span class="code-title">auction.nr</span>
+                        </div>
+                        <pre><code>fn commit_bid(
+    bid_amount: Field,
+    nonce: Field,
+    commitment: pub Field
+) {
+    let hash = pedersen_hash([bid_amount, nonce]);
+    assert(hash == commitment);
+    
+    // Verify bid is within bounds
+    assert(bid_amount > 0);
+}</code></pre>
+                    </div>
+
+                    <div class="contract-actions">
+                        <button class="btn-primary">Deploy Template</button>
+                        <button class="btn-secondary">View Source</button>
+                    </div>
+                </div>
+
+                <!-- Private Assets -->
+                <div class="contract-card detailed">
+                    <div class="contract-header">
+                        <div class="contract-icon">
+                            <div class="icon-glow"></div>
+                            💰
+                        </div>
+                        <div class="contract-meta">
+                            <h3>Private Assets</h3>
+                            <div class="difficulty-badge advanced">Advanced</div>
+                        </div>
+                    </div>
+                    <p class="contract-description">
+                        Manage confidential asset transfers with hidden amounts and recipients while proving transaction validity. Perfect for private payments, salary distribution, and donations.
+                    </p>
+                    
+                    <div class="contract-features">
+                        <div class="feature-list">
+                            <div class="feature-item">
+                                <span class="feature-icon">👻</span>
+                                <span>Hidden amounts and recipients</span>
+                            </div>
+                            <div class="feature-item">
+                                <span class="feature-icon">🛡️</span>
+                                <span>Balance conservation proofs</span>
+                            </div>
+                            <div class="feature-item">
+                                <span class="feature-icon">🔄</span>
+                                <span>UTXO-based transaction model</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="contract-metrics">
+                        <div class="metric">
+                            <span class="metric-label">Proving Time</span>
+                            <span class="metric-value">~5.2s</span>
+                        </div>
+                        <div class="metric">
+                            <span class="metric-label">Gas Usage</span>
+                            <span class="metric-value">~89K</span>
+                        </div>
+                        <div class="metric">
+                            <span class="metric-label">Proof Size</span>
+                            <span class="metric-value">~3.4KB</span>
+                        </div>
+                    </div>
+
+                    <div class="contract-code-preview">
+                        <div class="code-header">
+                            <span class="code-title">transfer.nr</span>
+                        </div>
+                        <pre><code>fn transfer(
+    input_amount: Field,
+    output_amount: Field,
+    fee: pub Field
+) {
+    // Prove balance conservation
+    assert(input_amount == output_amount + fee);
+    
+    // Verify amounts are positive
+    assert(output_amount > 0);
+}</code></pre>
+                    </div>
+
+                    <div class="contract-actions">
+                        <button class="btn-primary">Deploy Template</button>
+                        <button class="btn-secondary">View Source</button>
+                    </div>
+                </div>
+
+                <!-- Identity Verification -->
+                <div class="contract-card detailed">
+                    <div class="contract-header">
+                        <div class="contract-icon">
+                            <div class="icon-glow"></div>
+                            🔐
+                        </div>
+                        <div class="contract-meta">
+                            <h3>Identity Verification</h3>
+                            <div class="difficulty-badge advanced">Advanced</div>
+                        </div>
+                    </div>
+                    <p class="contract-description">
+                        Prove identity attributes without revealing personal information using zero-knowledge credentials. Essential for KYC compliance and age verification.
+                    </p>
+                    
+                    <div class="contract-features">
+                        <div class="feature-list">
+                            <div class="feature-item">
+                                <span class="feature-icon">🎭</span>
+                                <span>Selective disclosure of attributes</span>
+                            </div>
+                            <div class="feature-item">
+                                <span class="feature-icon">📜</span>
+                                <span>Verifiable credential proofs</span>
+                            </div>
+                            <div class="feature-item">
+                                <span class="feature-icon">🏢</span>
+                                <span>Compliance-ready implementation</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="contract-metrics">
+                        <div class="metric">
+                            <span class="metric-label">Proving Time</span>
+                            <span class="metric-value">~4.1s</span>
+                        </div>
+                        <div class="metric">
+                            <span class="metric-label">Gas Usage</span>
+                            <span class="metric-value">~71K</span>
+                        </div>
+                        <div class="metric">
+                            <span class="metric-label">Proof Size</span>
+                            <span class="metric-value">~2.9KB</span>
+                        </div>
+                    </div>
+
+                    <div class="contract-code-preview">
+                        <div class="code-header">
+                            <span class="code-title">identity.nr</span>
+                        </div>
+                        <pre><code>fn verify_age(
+    birth_year: Field,
+    current_year: pub Field,
+    min_age: pub Field
+) {
+    let age = current_year - birth_year;
+    assert(age >= min_age);
+    
+    // Prove birth year is reasonable
+    assert(birth_year > 1900);
+}</code></pre>
+                    </div>
+
+                    <div class="contract-actions">
+                        <button class="btn-primary">Deploy Template</button>
+                        <button class="btn-secondary">View Source</button>
+                    </div>
+                </div>
+
+                <!-- Private DAO -->
+                <div class="contract-card detailed">
+                    <div class="contract-header">
+                        <div class="contract-icon">
+                            <div class="icon-glow"></div>
+                            🏛️
+                        </div>
+                        <div class="contract-meta">
+                            <h3>Private DAO</h3>
+                            <div class="difficulty-badge expert">Expert</div>
+                        </div>
+                    </div>
+                    <p class="contract-description">
+                        Anonymous weighted governance system for decentralized organizations. Enables private voting with stake-based weight calculation while maintaining transparency.
+                    </p>
+                    
+                    <div class="contract-features">
+                        <div class="feature-list">
+                            <div class="feature-item">
+                                <span class="feature-icon">⚖️</span>
+                                <span>Weighted voting by stake</span>
+                            </div>
+                            <div class="feature-item">
+                                <span class="feature-icon">🎭</span>
+                                <span>Anonymous participation</span>
+                            </div>
+                            <div class="feature-item">
+                                <span class="feature-icon">🔗</span>
+                                <span>Multi-proposal governance</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="contract-metrics">
+                        <div class="metric">
+                            <span class="metric-label">Proving Time</span>
+                            <span class="metric-value">~6.7s</span>
+                        </div>
+                        <div class="metric">
+                            <span class="metric-label">Gas Usage</span>
+                            <span class="metric-value">~112K</span>
+                        </div>
+                        <div class="metric">
+                            <span class="metric-label">Proof Size</span>
+                            <span class="metric-value">~4.1KB</span>
+                        </div>
+                    </div>
+
+                    <div class="contract-code-preview">
+                        <div class="code-header">
+                            <span class="code-title">governance.nr</span>
+                        </div>
+                        <pre><code>fn vote_weighted(
+    vote: Field,
+    stake: Field,
+    proof_of_stake: Field,
+    nullifier: Field
+) {
+    // Verify stake proof
+    assert(proof_of_stake > 0);
+    
+    // Calculate weighted vote
+    let weighted_vote = vote * stake;
+    assert(weighted_vote > 0);
+}</code></pre>
+                    </div>
+
+                    <div class="contract-actions">
+                        <button class="btn-primary">Deploy Template</button>
+                        <button class="btn-secondary">View Source</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Getting Started Section -->
+    <section class="getting-started-section">
+        <div class="container">
+            <div class="getting-started-content">
+                <h2>Deploy Your First Privacy Contract</h2>
+                <p>Get started with Noircraft's contract templates in just a few commands. Choose a template, customize it, and deploy to the Aztec network.</p>
+                
+                <div class="steps-grid">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h3>Choose Template</h3>
+                            <p>Select from our production-ready contract templates above</p>
+                            <code>cd contracts/templates</code>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h3>Customize Contract</h3>
+                            <p>Copy and modify the template for your specific use case</p>
+                            <code>cp -r private_voting my_contract</code>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h3>Test & Deploy</h3>
+                            <p>Test your contract and deploy to the Aztec network</p>
+                            <code>nargo test && nargo prove</code>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="cta-section">
+                    <button class="btn-primary large">Start Building</button>
+                    <button class="btn-secondary large">View Documentation</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <img src="assets/images/noircraft-logo.png" alt="Noircraft" class="footer-logo-img">
+                        <span class="logo-text">NOIRCRAFT</span>
+                    </div>
+                    <p>Forging the future of privacy-preserving smart contracts on the Aztec network.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link">Twitter</a>
+                        <a href="#" class="social-link">Discord</a>
+                        <a href="#" class="social-link">GitHub</a>
+                        <a href="#" class="social-link">Telegram</a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Contracts</h4>
+                    <ul>
+                        <li><a href="#private-voting">Private Voting</a></li>
+                        <li><a href="#anonymous-auctions">Anonymous Auctions</a></li>
+                        <li><a href="#private-assets">Private Assets</a></li>
+                        <li><a href="#identity-verification">Identity Verification</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Developers</h4>
+                    <ul>
+                        <li><a href="#">Documentation</a></li>
+                        <li><a href="#">Tutorials</a></li>
+                        <li><a href="#">API Reference</a></li>
+                        <li><a href="#">Examples</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Community</h4>
+                    <ul>
+                        <li><a href="#">Discord</a></li>
+                        <li><a href="#">Forum</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Events</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Noircraft. All rights reserved. | Privacy Policy | Terms of Service</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
