@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Through Zero-Knowledge - Noircraft</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+        <div class="nav-logo">
+            <img src="assets/images/noircraft-logo.png" alt="Noircraft" class="logo">
+            <span class="logo-text">NOIRCRAFT</span>
+        </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="contracts.html">Contracts</a></li>
+                <li><a href="privacy.html" class="active">Privacy</a></li>
+                <li><a href="#developers">Developers</a></li>
+                <li><a href="#community">Community</a></li>
+            </ul>
+            <div class="nav-cta">
+                <button class="btn-secondary">View Examples</button>
+                <button class="btn-primary">Get Started</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Privacy Hero Section -->
+    <section class="privacy-hero">
+        <div class="hero-background">
+            <div class="hero-overlay"></div>
+        </div>
+        <div class="container">
+            <div class="privacy-hero-content">
+                <h1 class="privacy-title">Privacy Through Zero-Knowledge</h1>
+                <p class="privacy-subtitle">
+                    Discover how Noir contracts achieve true privacy on the blockchain through advanced cryptographic techniques, 
+                    enabling confidential transactions while maintaining verifiability and trust.
+                </p>
+                <div class="privacy-highlights">
+                    <div class="highlight-item">
+                        <span class="highlight-icon">🔒</span>
+                        <span>Zero-Knowledge Proofs</span>
+                    </div>
+                    <div class="highlight-item">
+                        <span class="highlight-icon">🛡️</span>
+                        <span>Cryptographic Privacy</span>
+                    </div>
+                    <div class="highlight-item">
+                        <span class="highlight-icon">⚡</span>
+                        <span>Verifiable Computation</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How Privacy Works Section -->
+    <section class="privacy-explanation">
+        <div class="container">
+            <h2 class="section-title">How Privacy is Achieved</h2>
+            <div class="privacy-flow">
+                <div class="flow-step">
+                    <div class="step-visual">
+                        <div class="step-icon">📝</div>
+                        <div class="step-number">1</div>
+                    </div>
+                    <div class="step-content">
+                        <h3>Write Noir Contract</h3>
+                        <p>Developers write privacy-preserving logic in Noir, a domain-specific language designed for zero-knowledge proofs. The contract defines what needs to be proven without revealing sensitive data.</p>
+                        <div class="code-example">
+                            <pre><code>fn verify_age(
+    birth_year: Field,
+    current_year: pub Field,
+    min_age: pub Field
+) {
+    let age = current_year - birth_year;
+    assert(age >= min_age);
+    // Age is proven without revealing birth year
+}</code></pre>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flow-step">
+                    <div class="step-visual">
+                        <div class="step-icon">⚙️</div>
+                        <div class="step-number">2</div>
+                    </div>
+                    <div class="step-content">
+                        <h3>Compile to ACIR</h3>
+                        <p>The Noir compiler transforms your privacy logic into ACIR (Abstract Circuit Intermediate Representation), creating a mathematical circuit that can prove statements without revealing inputs.</p>
+                        <div class="tech-details">
+                            <div class="detail-item">
+                                <span class="detail-label">Circuit Gates:</span>
+                                <span class="detail-value">Arithmetic & Boolean operations</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">Constraints:</span>
+                                <span class="detail-value">Mathematical relationships</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">Witnesses:</span>
+                                <span class="detail-value">Private input assignments</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flow-step">
+                    <div class="step-visual">
+                        <div class="step-icon">🔐</div>
+                        <div class="step-number">3</div>
+                    </div>
+                    <div class="step-content">
+                        <h3>Generate Zero-Knowledge Proof</h3>
+                        <p>The proving system (like Barretenberg) uses your private inputs to generate a cryptographic proof that the circuit constraints are satisfied, without revealing the private data.</p>
+                        <div class="proof-components">
+                            <div class="component">
+                                <h4>Private Inputs</h4>
+                                <p>Sensitive data like amounts, identities, or credentials</p>
+                            </div>
+                            <div class="component">
+                                <h4>Public Inputs</h4>
+                                <p>Publicly verifiable parameters and constraints</p>
+                            </div>
+                            <div class="component">
+                                <h4>Proof</h4>
+                                <p>Cryptographic evidence that computation is correct</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flow-step">
+                    <div class="step-visual">
+                        <div class="step-icon">✅</div>
+                        <div class="step-number">4</div>
+                    </div>
+                    <div class="step-content">
+                        <h3>Verify on Aztec Network</h3>
+                        <p>The Aztec network verifies proofs efficiently without accessing private data. Validators can confirm transaction validity while maintaining complete privacy of sensitive information.</p>
+                        <div class="verification-benefits">
+                            <div class="benefit">
+                                <span class="benefit-icon">⚡</span>
+                                <span>Fast verification (~15ms)</span>
+                            </div>
+                            <div class="benefit">
+                                <span class="benefit-icon">🔒</span>
+                                <span>Complete data privacy</span>
+                            </div>
+                            <div class="benefit">
+                                <span class="benefit-icon">🌐</span>
+                                <span>Public verifiability</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Privacy Technologies Section -->
+    <section class="privacy-technologies">
+        <div class="container">
+            <h2 class="section-title">Supporting Technologies</h2>
+            <div class="tech-grid">
+                <div class="tech-card">
+                    <div class="tech-header">
+                        <div class="tech-icon">🧮</div>
+                        <h3>PLONK/UltraPLONK</h3>
+                    </div>
+                    <p>Advanced zero-knowledge proof system providing universal and updatable trusted setup with efficient verification.</p>
+                    <div class="tech-features">
+                        <span class="feature-tag">Universal Setup</span>
+                        <span class="feature-tag">Constant Proof Size</span>
+                        <span class="feature-tag">Fast Verification</span>
+                    </div>
+                </div>
+
+                <div class="tech-card">
+                    <div class="tech-header">
+                        <div class="tech-icon">🌀</div>
+                        <h3>Pedersen Commitments</h3>
+                    </div>
+                    <p>Cryptographic commitment scheme that allows hiding values while maintaining the ability to prove properties about them later.</p>
+                    <div class="tech-features">
+                        <span class="feature-tag">Hiding</span>
+                        <span class="feature-tag">Binding</span>
+                        <span class="feature-tag">Homomorphic</span>
+                    </div>
+                </div>
+
+                <div class="tech-card">
+                    <div class="tech-header">
+                        <div class="tech-icon">🔑</div>
+                        <h3>Nullifier System</h3>
+                    </div>
+                    <p>Prevents double-spending and replay attacks in privacy systems by creating unique, unlinkable nullifiers for each transaction.</p>
+                    <div class="tech-features">
+                        <span class="feature-tag">Double-spend Prevention</span>
+                        <span class="feature-tag">Unlinkable</span>
+                        <span class="feature-tag">Deterministic</span>
+                    </div>
+                </div>
+
+                <div class="tech-card">
+                    <div class="tech-header">
+                        <div class="tech-icon">🌳</div>
+                        <h3>Merkle Trees</h3>
+                    </div>
+                    <p>Efficient data structure for proving membership in large sets without revealing the entire set or the member's position.</p>
+                    <div class="tech-features">
+                        <span class="feature-tag">Membership Proofs</span>
+                        <span class="feature-tag">Logarithmic Size</span>
+                        <span class="feature-tag">Tamper Proof</span>
+                    </div>
+                </div>
+
+                <div class="tech-card">
+                    <div class="tech-header">
+                        <div class="tech-icon">🔄</div>
+                        <h3>UTXO Model</h3>
+                    </div>
+                    <p>Unspent Transaction Output model adapted for privacy, enabling confidential amounts and recipients while proving transaction validity.</p>
+                    <div class="tech-features">
+                        <span class="feature-tag">Privacy</span>
+                        <span class="feature-tag">Parallelizable</span>
+                        <span class="feature-tag">Auditability</span>
+                    </div>
+                </div>
+
+                <div class="tech-card">
+                    <div class="tech-header">
+                        <div class="tech-icon">🎭</div>
+                        <h3>Ring Signatures</h3>
+                    </div>
+                    <p>Cryptographic signature scheme that proves authorization from one member of a group without revealing which specific member signed.</p>
+                    <div class="tech-features">
+                        <span class="feature-tag">Anonymity</span>
+                        <span class="feature-tag">Unforgeability</span>
+                        <span class="feature-tag">Group Membership</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Privacy Use Cases Section -->
+    <section class="privacy-use-cases">
+        <div class="container">
+            <h2 class="section-title">Privacy in Action</h2>
+            <div class="use-cases-grid">
+                <div class="use-case">
+                    <div class="use-case-header">
+                        <div class="use-case-icon">🗳️</div>
+                        <h3>Anonymous Voting</h3>
+                    </div>
+                    <div class="use-case-content">
+                        <p><strong>Privacy Challenge:</strong> Voters need anonymity while preventing double-voting and ensuring result integrity.</p>
+                        <p><strong>Noir Solution:</strong> Zero-knowledge proofs verify voter eligibility and prevent double-voting without revealing vote choices or voter identities.</p>
+                        <div class="privacy-guarantees">
+                            <div class="guarantee">✓ Vote secrecy maintained</div>
+                            <div class="guarantee">✓ Double-voting prevented</div>
+                            <div class="guarantee">✓ Results verifiable</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="use-case">
+                    <div class="use-case-header">
+                        <div class="use-case-icon">💰</div>
+                        <h3>Private Payments</h3>
+                    </div>
+                    <div class="use-case-content">
+                        <p><strong>Privacy Challenge:</strong> Hide transaction amounts and recipient identities while proving fund availability and preventing double-spending.</p>
+                        <p><strong>Noir Solution:</strong> Confidential transactions use commitments to hide amounts and ring signatures to obscure recipients while maintaining blockchain integrity.</p>
+                        <div class="privacy-guarantees">
+                            <div class="guarantee">✓ Amount confidentiality</div>
+                            <div class="guarantee">✓ Recipient anonymity</div>
+                            <div class="guarantee">✓ Balance conservation proven</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="use-case">
+                    <div class="use-case-header">
+                        <div class="use-case-icon">🔐</div>
+                        <h3>Identity Verification</h3>
+                    </div>
+                    <div class="use-case-content">
+                        <p><strong>Privacy Challenge:</strong> Prove identity attributes (age, citizenship, credentials) without revealing personal information.</p>
+                        <p><strong>Noir Solution:</strong> Selective disclosure proofs allow proving specific attributes from credentials without revealing other personal data.</p>
+                        <div class="privacy-guarantees">
+                            <div class="guarantee">✓ Minimal data disclosure</div>
+                            <div class="guarantee">✓ Attribute verification</div>
+                            <div class="guarantee">✓ Credential authenticity</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="use-case">
+                    <div class="use-case-header">
+                        <div class="use-case-icon">🏛️</div>
+                        <h3>Private Auctions</h3>
+                    </div>
+                    <div class="use-case-content">
+                        <p><strong>Privacy Challenge:</strong> Keep bids confidential until reveal while ensuring fair price discovery and preventing bid manipulation.</p>
+                        <p><strong>Noir Solution:</strong> Sealed-bid commitments hide bid amounts with time-locked reveals, ensuring auction integrity and fair outcomes.</p>
+                        <div class="privacy-guarantees">
+                            <div class="guarantee">✓ Sealed bid privacy</div>
+                            <div class="guarantee">✓ Fair price discovery</div>
+                            <div class="guarantee">✓ Manipulation resistance</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Privacy Principles Section -->
+    <section class="privacy-principles">
+        <div class="container">
+            <h2 class="section-title">Core Privacy Principles</h2>
+            <div class="principles-content">
+                <div class="principle-item">
+                    <div class="principle-icon">🔐</div>
+                    <div class="principle-text">
+                        <h3>Data Minimization</h3>
+                        <p>Only the minimum necessary information is revealed to achieve the desired outcome. Private inputs remain completely hidden while public outputs provide just enough information for verification.</p>
+                    </div>
+                </div>
+
+                <div class="principle-item">
+                    <div class="principle-icon">🛡️</div>
+                    <div class="principle-text">
+                        <h3>Cryptographic Soundness</h3>
+                        <p>Privacy guarantees are backed by mathematically proven cryptographic primitives. The security relies on well-established computational assumptions rather than trusted parties.</p>
+                    </div>
+                </div>
+
+                <div class="principle-item">
+                    <div class="principle-icon">⚡</div>
+                    <div class="principle-text">
+                        <h3>Efficient Verification</h3>
+                        <p>While proof generation may be computationally intensive, verification is fast and constant-time, enabling scalable privacy-preserving applications on blockchain networks.</p>
+                    </div>
+                </div>
+
+                <div class="principle-item">
+                    <div class="principle-icon">🌐</div>
+                    <div class="principle-text">
+                        <h3>Public Verifiability</h3>
+                        <p>Anyone can verify that computations were performed correctly without needing access to private inputs or trusting the prover. This enables trustless privacy-preserving systems.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Getting Started Section -->
+    <section class="privacy-cta">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Start Building Private Applications</h2>
+                <p>Ready to implement privacy-preserving smart contracts? Explore our contract templates and start building with zero-knowledge proofs today.</p>
+                <div class="cta-actions">
+                    <button class="btn-primary large">Explore Contracts</button>
+                    <button class="btn-secondary large">Read Documentation</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <img src="assets/images/noircraft-logo.png" alt="Noircraft" class="footer-logo-img">
+                        <span class="logo-text">NOIRCRAFT</span>
+                    </div>
+                    <p>Forging the future of privacy-preserving smart contracts on the Aztec network.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link">Twitter</a>
+                        <a href="#" class="social-link">Discord</a>
+                        <a href="#" class="social-link">GitHub</a>
+                        <a href="#" class="social-link">Telegram</a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Contracts</h4>
+                    <ul>
+                        <li><a href="contracts.html#private-voting">Private Voting</a></li>
+                        <li><a href="contracts.html#anonymous-auctions">Anonymous Auctions</a></li>
+                        <li><a href="contracts.html#private-assets">Private Assets</a></li>
+                        <li><a href="contracts.html#identity-verification">Identity Verification</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Privacy</h4>
+                    <ul>
+                        <li><a href="#privacy-explanation">How It Works</a></li>
+                        <li><a href="#privacy-technologies">Technologies</a></li>
+                        <li><a href="#privacy-use-cases">Use Cases</a></li>
+                        <li><a href="#privacy-principles">Principles</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Community</h4>
+                    <ul>
+                        <li><a href="#">Discord</a></li>
+                        <li><a href="#">Forum</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Events</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Noircraft. All rights reserved. | Privacy Policy | Terms of Service</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

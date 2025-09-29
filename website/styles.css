@@ -1392,6 +1392,444 @@ body {
     border-bottom: 2px solid var(--primary-gold);
 }
 
+/* Privacy Page Styles */
+.privacy-hero {
+    min-height: 70vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    background: 
+        linear-gradient(135deg, var(--darker-bg) 0%, var(--dark-bg) 50%, var(--warcraft-stone) 100%);
+    margin-top: 80px;
+}
+
+.privacy-hero-content {
+    text-align: center;
+    z-index: 2;
+    position: relative;
+}
+
+.privacy-title {
+    font-family: var(--font-heading);
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    color: var(--primary-gold);
+    text-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
+}
+
+.privacy-subtitle {
+    font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+    line-height: 1.6;
+    color: var(--text-gray);
+    max-width: 900px;
+    margin: 0 auto 3rem auto;
+}
+
+.privacy-highlights {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.highlight-item {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    background: rgba(244, 196, 48, 0.1);
+    border: 1px solid rgba(244, 196, 48, 0.3);
+    padding: 1rem 1.5rem;
+    border-radius: 25px;
+    color: var(--text-light);
+    font-weight: 500;
+}
+
+.highlight-icon {
+    font-size: 1.5rem;
+}
+
+.privacy-explanation {
+    padding: 5rem 0;
+    background: var(--dark-bg);
+}
+
+.privacy-flow {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.flow-step {
+    display: grid;
+    grid-template-columns: 120px 1fr;
+    gap: 2rem;
+    align-items: start;
+}
+
+.step-visual {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+.step-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    background: radial-gradient(circle, var(--warcraft-bronze) 0%, var(--warcraft-stone) 100%);
+    border: 2px solid var(--warcraft-gold);
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.step-number {
+    background: var(--primary-gold);
+    color: var(--dark-bg);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 1.2rem;
+    box-shadow: 0 0 15px rgba(255, 215, 0, 0.4);
+}
+
+.step-content h3 {
+    font-family: var(--font-heading);
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    color: var(--primary-gold);
+}
+
+.step-content p {
+    color: var(--text-gray);
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+}
+
+.code-example {
+    background: var(--darker-bg);
+    border-radius: 8px;
+    border: 1px solid var(--warcraft-bronze);
+    overflow: hidden;
+    margin-top: 1rem;
+}
+
+.code-example pre {
+    margin: 0;
+    padding: 1.5rem;
+    overflow-x: auto;
+}
+
+.code-example code {
+    font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: var(--text-light);
+}
+
+.tech-details {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    background: rgba(0, 0, 0, 0.3);
+    padding: 1.5rem;
+    border-radius: 8px;
+    border: 1px solid var(--warcraft-bronze);
+}
+
+.detail-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.detail-label {
+    color: var(--text-dim);
+    font-weight: 500;
+}
+
+.detail-value {
+    color: var(--primary-blue);
+    font-weight: 600;
+}
+
+.proof-components {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+.component {
+    background: var(--card-bg);
+    padding: 1.5rem;
+    border-radius: 8px;
+    border: 1px solid var(--warcraft-bronze);
+}
+
+.component h4 {
+    color: var(--primary-gold);
+    margin-bottom: 0.8rem;
+    font-family: var(--font-heading);
+}
+
+.component p {
+    color: var(--text-gray);
+    font-size: 0.95rem;
+    margin: 0;
+}
+
+.verification-benefits {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    margin-top: 1rem;
+}
+
+.benefit {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    color: var(--text-gray);
+}
+
+.benefit-icon {
+    font-size: 1.2rem;
+    min-width: 24px;
+}
+
+.privacy-technologies {
+    padding: 5rem 0;
+    background: 
+        linear-gradient(135deg, var(--warcraft-stone) 0%, var(--dark-bg) 100%);
+}
+
+.tech-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.tech-card {
+    background: 
+        linear-gradient(145deg, var(--card-bg) 0%, var(--warcraft-stone) 100%);
+    border: 2px solid var(--warcraft-bronze);
+    border-radius: 12px;
+    padding: 2rem;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.tech-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--primary-gold);
+    box-shadow: 
+        var(--shadow-warcraft),
+        0 12px 30px rgba(0, 0, 0, 0.4);
+}
+
+.tech-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.tech-icon {
+    font-size: 2rem;
+    background: radial-gradient(circle, var(--warcraft-bronze) 0%, var(--warcraft-stone) 100%);
+    border: 2px solid var(--warcraft-gold);
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.tech-header h3 {
+    font-family: var(--font-heading);
+    font-size: 1.4rem;
+    color: var(--primary-gold);
+    margin: 0;
+}
+
+.tech-card p {
+    color: var(--text-gray);
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+.tech-features {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.privacy-use-cases {
+    padding: 5rem 0;
+    background: var(--dark-bg);
+}
+
+.use-cases-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+    gap: 2.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.use-case {
+    background: 
+        linear-gradient(145deg, var(--card-bg) 0%, var(--warcraft-stone) 100%);
+    border: 2px solid var(--warcraft-bronze);
+    border-radius: 12px;
+    padding: 2.5rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.use-case-header {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.use-case-icon {
+    font-size: 2.5rem;
+    background: radial-gradient(circle, var(--warcraft-bronze) 0%, var(--warcraft-stone) 100%);
+    border: 2px solid var(--warcraft-gold);
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.use-case-header h3 {
+    font-family: var(--font-heading);
+    font-size: 1.6rem;
+    color: var(--primary-gold);
+    margin: 0;
+}
+
+.use-case-content p {
+    color: var(--text-gray);
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+.use-case-content strong {
+    color: var(--primary-blue);
+    font-weight: 600;
+}
+
+.privacy-guarantees {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    margin-top: 1.5rem;
+}
+
+.guarantee {
+    color: var(--warcraft-green);
+    font-weight: 500;
+}
+
+.privacy-principles {
+    padding: 5rem 0;
+    background: 
+        linear-gradient(135deg, var(--warcraft-stone) 0%, var(--dark-bg) 100%);
+}
+
+.principles-content {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.principle-item {
+    display: grid;
+    grid-template-columns: 80px 1fr;
+    gap: 2rem;
+    align-items: start;
+}
+
+.principle-icon {
+    font-size: 2.5rem;
+    background: radial-gradient(circle, var(--warcraft-bronze) 0%, var(--warcraft-stone) 100%);
+    border: 2px solid var(--warcraft-gold);
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.principle-text h3 {
+    font-family: var(--font-heading);
+    font-size: 1.6rem;
+    color: var(--primary-gold);
+    margin-bottom: 1rem;
+}
+
+.principle-text p {
+    color: var(--text-gray);
+    line-height: 1.6;
+    font-size: 1.1rem;
+}
+
+.privacy-cta {
+    padding: 4rem 0;
+    background: var(--dark-bg);
+}
+
+.cta-content {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.cta-content h2 {
+    font-family: var(--font-heading);
+    font-size: clamp(2rem, 4vw, 3rem);
+    margin-bottom: 1rem;
+    color: var(--primary-gold);
+}
+
+.cta-content p {
+    font-size: 1.2rem;
+    color: var(--text-gray);
+    margin-bottom: 3rem;
+    line-height: 1.6;
+}
+
+.cta-actions {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
     .nav-container {
@@ -1462,6 +1900,42 @@ body {
     }
     
     .cta-section {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .privacy-highlights {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .flow-step {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        text-align: center;
+    }
+    
+    .tech-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .use-cases-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .use-case-header {
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
+    }
+    
+    .principle-item {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 1rem;
+    }
+    
+    .cta-actions {
         flex-direction: column;
         align-items: center;
     }
