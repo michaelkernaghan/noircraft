@@ -1,0 +1,214 @@
+/* Warcraft Icon System - Noircraft */
+/* Based on the epic Warcraft icon collection */
+
+.warcraft-icon {
+    display: inline-block;
+    width: 32px;
+    height: 32px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    filter: drop-shadow(0 0 8px rgba(255, 215, 0, 0.4));
+    transition: all 0.3s ease;
+    vertical-align: middle;
+}
+
+.warcraft-icon:hover {
+    transform: scale(1.1);
+    filter: drop-shadow(0 0 12px rgba(255, 215, 0, 0.8));
+}
+
+.warcraft-icon.large {
+    width: 48px;
+    height: 48px;
+}
+
+.warcraft-icon.small {
+    width: 24px;
+    height: 24px;
+}
+
+/* Contract Type Icons - Real Warcraft Icons! */
+.icon-shadow-council {
+    background-image: url('icons/shadow-council.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.icon-sealed-bidding {
+    background-image: url('icons/sealed-bidding.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.icon-phantom-treasures {
+    background-image: url('icons/phantom-treasures.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.icon-identity-ward {
+    background-image: url('icons/identity-ward.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.icon-private-dao {
+    background-image: url('icons/private-dao.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+/* Feature Icons - Real Warcraft Icons! */
+.icon-stealth {
+    background-image: url('icons/stealth.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.icon-lightning-fast {
+    background-image: url('icons/lightning-fast.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.icon-ward-protection {
+    background-image: url('icons/ward-protection.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.icon-arcane-magic {
+    background-image: url('icons/arcane-magic.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.icon-truth-sight {
+    background-image: url('icons/truth-sight.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+/* Navigation Icons */
+.icon-stronghold {
+    background-image: url('icons/stronghold.png');
+    /* Castle - for Home */
+}
+
+.icon-grimoire {
+    background-image: url('icons/grimoire.png');
+    /* Ancient tome - for Contracts */
+}
+
+.icon-shadow-cloak {
+    background-image: url('icons/shadow-cloak.png');
+    /* Dark cloak - for Privacy */
+}
+
+.icon-forge-tools {
+    background-image: url('icons/forge-tools.png');
+    /* Hammer/anvil - for Developers */
+}
+
+.icon-guild-banner {
+    background-image: url('icons/guild-banner.png');
+    /* Banner/flag - for Community */
+}
+
+/* Special Effect Icons */
+.icon-mana-crystal {
+    background-image: url('icons/mana-crystal.png');
+    /* Blue crystal - for mana/gas costs */
+}
+
+.icon-ritual-flame {
+    background-image: url('icons/ritual-flame.png');
+    /* Magical flame - for proving time */
+}
+
+.icon-seal-essence {
+    background-image: url('icons/seal-essence.png');
+    /* Glowing seal - for proof size */
+}
+
+/* Difficulty Badges with Icons */
+.difficulty-icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 0.5rem;
+}
+
+.icon-apprentice {
+    background-image: url('icons/apprentice.png');
+    /* Simple staff or basic rune */
+}
+
+.icon-adept {
+    background-image: url('icons/adept.png');
+    /* Enhanced staff or glowing rune */
+}
+
+.icon-master {
+    background-image: url('icons/master.png');
+    /* Ornate staff or complex rune */
+}
+
+.icon-grandmaster {
+    background-image: url('icons/grandmaster.png');
+    /* Legendary staff or ancient rune */
+}
+
+/* Animated Effects for Special Icons */
+.warcraft-icon.animated {
+    animation: iconPulse 2s ease-in-out infinite alternate;
+}
+
+@keyframes iconPulse {
+    0% {
+        filter: drop-shadow(0 0 8px rgba(255, 215, 0, 0.4));
+    }
+    100% {
+        filter: drop-shadow(0 0 16px rgba(255, 215, 0, 0.8));
+    }
+}
+
+/* Glow variants for different magic types */
+.warcraft-icon.arcane-glow {
+    filter: drop-shadow(0 0 8px rgba(0, 212, 255, 0.6));
+}
+
+.warcraft-icon.shadow-glow {
+    filter: drop-shadow(0 0 8px rgba(138, 43, 226, 0.6));
+}
+
+.warcraft-icon.fire-glow {
+    filter: drop-shadow(0 0 8px rgba(255, 69, 0, 0.6));
+}
+
+.warcraft-icon.nature-glow {
+    filter: drop-shadow(0 0 8px rgba(34, 139, 34, 0.6));
+}
+
+/* Icon groupings for contract cards */
+.contract-icon-group {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.contract-icon-group .warcraft-icon {
+    width: 24px;
+    height: 24px;
+}

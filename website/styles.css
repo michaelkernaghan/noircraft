@@ -34,6 +34,20 @@
     --font-heading: 'Cinzel', serif;
     --font-body: 'Open Sans', sans-serif;
     
+    /* Fantasy Icon System */
+    --icon-shield: "🛡";
+    --icon-sword: "⚔";
+    --icon-crown: "♕";
+    --icon-gem: "💎";
+    --icon-scroll: "📜";
+    --icon-key: "🗝";
+    --icon-orb: "🔮";
+    --icon-rune: "ᚱ";
+    --icon-star: "✦";
+    --icon-lightning: "⚡";
+    --icon-eye: "👁";
+    --icon-lock: "🔒";
+    
     /* Enhanced Shadows and Effects */
     --shadow-glow: 0 0 20px rgba(0, 212, 255, 0.3);
     --shadow-gold: 0 0 15px rgba(255, 215, 0, 0.5);
@@ -1868,6 +1882,40 @@ body {
     justify-content: center;
     flex-wrap: wrap;
 }
+
+/* Fantasy Icon System */
+.fantasy-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    filter: drop-shadow(0 0 8px var(--glow-gold));
+    transition: all 0.3s ease;
+}
+
+.fantasy-icon:hover {
+    transform: scale(1.1);
+    filter: drop-shadow(0 0 12px var(--primary-gold));
+}
+
+.icon-shield::before { content: "🛡️"; }
+.icon-sword::before { content: "⚔️"; }
+.icon-crown::before { content: "👑"; }
+.icon-gem::before { content: "💎"; }
+.icon-scroll::before { content: "📜"; }
+.icon-key::before { content: "🗝️"; }
+.icon-orb::before { content: "🔮"; }
+.icon-rune::before { content: "ᚱ"; color: var(--primary-gold); font-weight: bold; }
+.icon-star::before { content: "✦"; color: var(--primary-blue); }
+.icon-lightning::before { content: "⚡"; }
+.icon-eye::before { content: "👁️"; }
+.icon-lock::before { content: "🔒"; }
+.icon-hammer::before { content: "🔨"; }
+.icon-potion::before { content: "🧪"; }
+.icon-crystal::before { content: "💠"; }
+.icon-flame::before { content: "🔥"; }
+.icon-moon::before { content: "🌙"; }
+.icon-dragon::before { content: "🐉"; }
 
 /* Responsive Design */
 @media (max-width: 768px) {
