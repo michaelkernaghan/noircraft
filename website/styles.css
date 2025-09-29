@@ -1038,6 +1038,45 @@ body {
     padding-top: 2rem;
     border-top: 1px solid rgba(244, 196, 48, 0.1);
     color: var(--text-dim);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.version-info {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    font-size: 0.85rem;
+    color: var(--text-dim);
+}
+
+.version-label {
+    color: var(--text-gray);
+    font-weight: 500;
+}
+
+.version-number {
+    background: rgba(244, 196, 48, 0.1);
+    color: var(--primary-gold);
+    padding: 0.2rem 0.6rem;
+    border-radius: 12px;
+    border: 1px solid rgba(244, 196, 48, 0.3);
+    font-weight: 600;
+    font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+    font-size: 0.8rem;
+}
+
+.build-info {
+    color: var(--text-dim);
+    font-size: 0.8rem;
+}
+
+.build-info span {
+    color: var(--primary-blue);
+    font-weight: 600;
 }
 
 /* Contracts Page Styles */
@@ -1938,6 +1977,17 @@ body {
     .cta-actions {
         flex-direction: column;
         align-items: center;
+    }
+    
+    .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+        gap: 0.5rem;
+    }
+    
+    .version-info {
+        justify-content: center;
+        flex-wrap: wrap;
     }
     
     .pre-deploy-content,

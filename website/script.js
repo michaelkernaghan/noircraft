@@ -1,6 +1,9 @@
 // Noircraft Interactive Elements
 document.addEventListener('DOMContentLoaded', function() {
     
+    // Load and display version information
+    loadVersionInfo();
+    
     // Smooth scrolling for navigation links
     const navLinks = document.querySelectorAll('a[href^="#"]');
     navLinks.forEach(link => {
@@ -469,4 +472,31 @@ if ('performance' in window) {
             console.log(`⚡ Time to Interactive: ${Math.round(perfData.domInteractive - perfData.navigationStart)}ms`);
         }, 0);
     });
+}
+
+// Version Management Functions
+async function loadVersionInfo() {
+    try {
+        const response = await fetch('../version.json');
+        const versionData = await response.json();
+        
+        const versionDisplay = document.getElementById('version-display');
+        const buildNumber = document.getElementById('build-number');
+        
+        if (versionDisplay) {
+            versionDisplay.textContent = versionData.version;
+        }
+        if (buildNumber) {
+            buildNumber.textContent = versionData.build;
+        }
+        
+        console.log(`🚀 Noircraft v${versionData.version} (Build #${versionData.build}) - Updated: ${versionData.lastUpdated}`);
+    } catch (error) {
+        console.warn('Could not load version information:', error);
+        // Fallback to hardcoded version if JSON fails
+        const versionDisplay = document.getElementById('version-display');
+        const buildNumber = document.getElementById('build-number');
+        if (versionDisplay) versionDisplay.textContent = '1.0.0';
+        if (buildNumber) buildNumber.textContent = '1';
+    }
 }
