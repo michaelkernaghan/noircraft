@@ -1116,15 +1116,22 @@ body {
     font-weight: 700;
     margin-bottom: 1.5rem;
     color: var(--primary-gold);
-    text-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
+    text-shadow: 
+        2px 2px 4px rgba(0, 0, 0, 0.8),
+        0 0 20px rgba(255, 215, 0, 0.5);
 }
 
 .contracts-subtitle {
     font-size: clamp(1.1rem, 2.5vw, 1.4rem);
     line-height: 1.6;
-    color: var(--text-gray);
+    color: var(--text-light);
     max-width: 800px;
     margin: 0 auto 3rem auto;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+    background: rgba(0, 0, 0, 0.3);
+    padding: 1.5rem;
+    border-radius: 8px;
+    backdrop-filter: blur(5px);
 }
 
 .contracts-stats {
@@ -1468,15 +1475,22 @@ body {
     font-weight: 700;
     margin-bottom: 1.5rem;
     color: var(--primary-gold);
-    text-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
+    text-shadow: 
+        2px 2px 4px rgba(0, 0, 0, 0.8),
+        0 0 20px rgba(255, 215, 0, 0.5);
 }
 
 .privacy-subtitle {
     font-size: clamp(1.1rem, 2.5vw, 1.4rem);
     line-height: 1.6;
-    color: var(--text-gray);
+    color: var(--text-light);
     max-width: 900px;
     margin: 0 auto 3rem auto;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+    background: rgba(0, 0, 0, 0.3);
+    padding: 1.5rem;
+    border-radius: 8px;
+    backdrop-filter: blur(5px);
 }
 
 .privacy-highlights {
@@ -1906,15 +1920,22 @@ body {
     font-weight: 700;
     margin-bottom: 1.5rem;
     color: var(--primary-gold);
-    text-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
+    text-shadow: 
+        2px 2px 4px rgba(0, 0, 0, 0.8),
+        0 0 20px rgba(255, 215, 0, 0.5);
 }
 
 .developers-subtitle {
     font-size: clamp(1.1rem, 2.5vw, 1.4rem);
     line-height: 1.6;
-    color: var(--text-gray);
+    color: var(--text-light);
     max-width: 900px;
     margin: 0 auto 3rem auto;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+    background: rgba(0, 0, 0, 0.3);
+    padding: 1.5rem;
+    border-radius: 8px;
+    backdrop-filter: blur(5px);
 }
 
 .developers-highlights {
@@ -1938,7 +1959,12 @@ body {
 .pxe-intro p {
     font-size: 1.2rem;
     line-height: 1.6;
-    color: var(--text-gray);
+    color: var(--text-light);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+    background: rgba(0, 0, 0, 0.2);
+    padding: 1.5rem;
+    border-radius: 8px;
+    backdrop-filter: blur(3px);
 }
 
 .requirements-grid {
@@ -2185,6 +2211,407 @@ body {
         linear-gradient(135deg, var(--warcraft-stone) 0%, var(--dark-bg) 100%);
 }
 
+/* Community Page Styles */
+.community-hero {
+    min-height: 70vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    background: 
+        linear-gradient(135deg, var(--darker-bg) 0%, var(--dark-bg) 50%, var(--warcraft-stone) 100%);
+    margin-top: 80px;
+}
+
+.community-hero-content {
+    text-align: center;
+    z-index: 2;
+    position: relative;
+}
+
+.community-title {
+    font-family: var(--font-heading);
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    color: var(--primary-gold);
+    text-shadow: 
+        2px 2px 4px rgba(0, 0, 0, 0.8),
+        0 0 20px rgba(255, 215, 0, 0.5);
+}
+
+.community-subtitle {
+    font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+    line-height: 1.6;
+    color: var(--text-light);
+    max-width: 900px;
+    margin: 0 auto 3rem auto;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+    background: rgba(0, 0, 0, 0.3);
+    padding: 1.5rem;
+    border-radius: 8px;
+    backdrop-filter: blur(5px);
+}
+
+.community-stats {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    margin-bottom: 2rem;
+}
+
+.communication-channels {
+    padding: 5rem 0;
+    background: var(--dark-bg);
+}
+
+.channels-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.channel-card {
+    background: 
+        linear-gradient(145deg, var(--card-bg) 0%, var(--warcraft-stone) 100%);
+    border: 2px solid var(--warcraft-bronze);
+    border-radius: 12px;
+    padding: 2.5rem;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.channel-card.primary {
+    border-color: var(--primary-gold);
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.2);
+}
+
+.channel-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--primary-gold);
+    box-shadow: 
+        var(--shadow-warcraft),
+        0 12px 30px rgba(0, 0, 0, 0.4);
+}
+
+.channel-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.channel-header h3 {
+    font-family: var(--font-heading);
+    font-size: 1.6rem;
+    color: var(--primary-gold);
+    margin: 1rem 0 0.5rem 0;
+}
+
+.channel-badge {
+    background: rgba(244, 196, 48, 0.1);
+    color: var(--primary-gold);
+    padding: 0.3rem 1rem;
+    border-radius: 15px;
+    border: 1px solid rgba(244, 196, 48, 0.3);
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.channel-content p {
+    color: var(--text-gray);
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+.channel-features {
+    margin-bottom: 1.5rem;
+}
+
+.channel-features .feature-item {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    margin-bottom: 0.8rem;
+    color: var(--text-gray);
+    font-size: 0.95rem;
+}
+
+.channel-stats {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+}
+
+.stat-item {
+    background: rgba(0, 0, 0, 0.3);
+    color: var(--primary-blue);
+    padding: 0.5rem 1rem;
+    border-radius: 15px;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.community-events {
+    padding: 5rem 0;
+    background: 
+        linear-gradient(135deg, var(--warcraft-stone) 0%, var(--dark-bg) 100%);
+}
+
+.events-content {
+    max-width: 800px;
+    margin: 0 auto 3rem auto;
+    text-align: center;
+}
+
+.events-content p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: var(--text-gray);
+    margin-bottom: 3rem;
+}
+
+.events-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.event-card {
+    background: var(--card-bg);
+    border: 2px solid var(--warcraft-bronze);
+    border-radius: 12px;
+    padding: 2rem;
+    transition: all 0.3s ease;
+}
+
+.event-card.special {
+    border-color: var(--accent-purple);
+    background: linear-gradient(145deg, var(--card-bg) 0%, rgba(138, 43, 226, 0.1) 100%);
+}
+
+.event-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.event-meta h4 {
+    font-family: var(--font-heading);
+    color: var(--primary-gold);
+    margin: 0 0 0.5rem 0;
+}
+
+.event-frequency {
+    background: rgba(244, 196, 48, 0.1);
+    color: var(--primary-gold);
+    padding: 0.2rem 0.8rem;
+    border-radius: 10px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.event-details {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.detail-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: rgba(0, 0, 0, 0.3);
+    padding: 0.4rem 0.8rem;
+    border-radius: 15px;
+    font-size: 0.85rem;
+    color: var(--text-gray);
+}
+
+.community-guidelines {
+    padding: 5rem 0;
+    background: var(--dark-bg);
+}
+
+.guideline-intro {
+    max-width: 800px;
+    margin: 0 auto 3rem auto;
+    text-align: center;
+}
+
+.guideline-intro p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: var(--text-gray);
+}
+
+.guidelines-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.guideline-item {
+    background: var(--card-bg);
+    border: 1px solid var(--warcraft-bronze);
+    border-radius: 8px;
+    padding: 2rem;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.guideline-item:hover {
+    transform: translateY(-5px);
+    border-color: var(--primary-gold);
+}
+
+.guideline-item h4 {
+    font-family: var(--font-heading);
+    color: var(--primary-gold);
+    margin: 1rem 0;
+}
+
+.guideline-item p {
+    color: var(--text-gray);
+    line-height: 1.5;
+    font-size: 0.95rem;
+}
+
+.community-leaders {
+    padding: 5rem 0;
+    background: 
+        linear-gradient(135deg, var(--warcraft-stone) 0%, var(--dark-bg) 100%);
+}
+
+.leaders-content {
+    max-width: 800px;
+    margin: 0 auto 3rem auto;
+    text-align: center;
+}
+
+.leaders-content p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: var(--text-gray);
+    margin-bottom: 3rem;
+}
+
+.leaders-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.leader-card {
+    background: var(--card-bg);
+    border: 2px solid var(--warcraft-bronze);
+    border-radius: 12px;
+    padding: 2rem;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.leader-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--primary-gold);
+}
+
+.leader-avatar {
+    margin-bottom: 1rem;
+}
+
+.leader-info h4 {
+    font-family: var(--font-heading);
+    color: var(--primary-gold);
+    margin-bottom: 0.5rem;
+}
+
+.leader-role {
+    color: var(--primary-blue);
+    font-weight: 600;
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+}
+
+.leader-info p {
+    color: var(--text-gray);
+    line-height: 1.5;
+    font-size: 0.95rem;
+}
+
+.getting-involved {
+    padding: 5rem 0;
+    background: var(--dark-bg);
+}
+
+.involvement-content {
+    max-width: 800px;
+    margin: 0 auto 3rem auto;
+    text-align: center;
+}
+
+.involvement-intro p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: var(--text-gray);
+    margin-bottom: 3rem;
+}
+
+.involvement-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.involvement-card {
+    background: var(--card-bg);
+    border: 1px solid var(--warcraft-bronze);
+    border-radius: 8px;
+    padding: 2rem;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.involvement-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--primary-gold);
+}
+
+.involvement-card h4 {
+    font-family: var(--font-heading);
+    color: var(--primary-gold);
+    margin: 1rem 0;
+}
+
+.involvement-card p {
+    color: var(--text-gray);
+    line-height: 1.5;
+    margin-bottom: 1.5rem;
+    font-size: 0.95rem;
+}
+
+.community-cta {
+    padding: 4rem 0;
+    background: 
+        linear-gradient(135deg, var(--warcraft-stone) 0%, var(--dark-bg) 100%);
+}
+
 /* Fantasy Icon System */
 .fantasy-icon {
     display: inline-flex;
@@ -2327,6 +2754,29 @@ body {
     .cta-actions {
         flex-direction: column;
         align-items: center;
+    }
+    
+    .developers-highlights {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .requirements-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .setup-step {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 1rem;
+    }
+    
+    .architecture-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .config-grid {
+        grid-template-columns: 1fr;
     }
     
     .footer-bottom {
