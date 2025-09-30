@@ -1883,6 +1883,308 @@ body {
     flex-wrap: wrap;
 }
 
+/* Developers Page Styles */
+.developers-hero {
+    min-height: 70vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    background: 
+        linear-gradient(135deg, var(--darker-bg) 0%, var(--dark-bg) 50%, var(--warcraft-stone) 100%);
+    margin-top: 80px;
+}
+
+.developers-hero-content {
+    text-align: center;
+    z-index: 2;
+    position: relative;
+}
+
+.developers-title {
+    font-family: var(--font-heading);
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    color: var(--primary-gold);
+    text-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
+}
+
+.developers-subtitle {
+    font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+    line-height: 1.6;
+    color: var(--text-gray);
+    max-width: 900px;
+    margin: 0 auto 3rem auto;
+}
+
+.developers-highlights {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.pxe-requirements {
+    padding: 5rem 0;
+    background: var(--dark-bg);
+}
+
+.pxe-intro {
+    max-width: 800px;
+    margin: 0 auto 3rem auto;
+    text-align: center;
+}
+
+.pxe-intro p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: var(--text-gray);
+}
+
+.requirements-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.requirement-card {
+    background: 
+        linear-gradient(145deg, var(--card-bg) 0%, var(--warcraft-stone) 100%);
+    border: 2px solid var(--warcraft-bronze);
+    border-radius: 12px;
+    padding: 2.5rem;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.requirement-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--primary-gold);
+    box-shadow: 
+        var(--shadow-warcraft),
+        0 12px 30px rgba(0, 0, 0, 0.4);
+}
+
+.requirement-header {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.requirement-header h3 {
+    font-family: var(--font-heading);
+    font-size: 1.6rem;
+    color: var(--primary-gold);
+    margin: 0;
+}
+
+.requirement-content h4 {
+    color: var(--primary-blue);
+    margin-bottom: 1rem;
+    font-family: var(--font-heading);
+}
+
+.requirement-list {
+    list-style: none;
+    padding: 0;
+}
+
+.requirement-list li {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    margin-bottom: 0.8rem;
+    color: var(--text-gray);
+    line-height: 1.5;
+}
+
+.setup-process {
+    padding: 5rem 0;
+    background: 
+        linear-gradient(135deg, var(--warcraft-stone) 0%, var(--dark-bg) 100%);
+}
+
+.setup-steps {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.setup-step {
+    display: grid;
+    grid-template-columns: 120px 1fr;
+    gap: 2rem;
+    align-items: start;
+}
+
+.setup-note {
+    background: rgba(244, 196, 48, 0.1);
+    border: 1px solid rgba(244, 196, 48, 0.3);
+    border-radius: 8px;
+    padding: 1rem;
+    margin-top: 1rem;
+}
+
+.setup-note p {
+    margin: 0;
+    color: var(--primary-gold);
+    font-size: 0.9rem;
+}
+
+.pxe-architecture {
+    padding: 5rem 0;
+    background: var(--dark-bg);
+}
+
+.architecture-content {
+    max-width: 800px;
+    margin: 0 auto 3rem auto;
+    text-align: center;
+}
+
+.architecture-content p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: var(--text-gray);
+}
+
+.architecture-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.arch-component {
+    background: var(--card-bg);
+    border: 1px solid var(--warcraft-bronze);
+    border-radius: 8px;
+    padding: 2rem;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.arch-component:hover {
+    transform: translateY(-5px);
+    border-color: var(--primary-gold);
+}
+
+.component-icon {
+    margin-bottom: 1rem;
+}
+
+.arch-component h4 {
+    font-family: var(--font-heading);
+    color: var(--primary-gold);
+    margin-bottom: 1rem;
+}
+
+.arch-component p {
+    color: var(--text-gray);
+    line-height: 1.5;
+    font-size: 0.95rem;
+}
+
+.advanced-config {
+    padding: 5rem 0;
+    background: 
+        linear-gradient(135deg, var(--warcraft-stone) 0%, var(--dark-bg) 100%);
+}
+
+.config-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.config-card {
+    background: 
+        linear-gradient(145deg, var(--card-bg) 0%, var(--warcraft-stone) 100%);
+    border: 2px solid var(--warcraft-bronze);
+    border-radius: 12px;
+    padding: 2.5rem;
+    transition: all 0.3s ease;
+}
+
+.config-header {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.config-header h3 {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    color: var(--primary-gold);
+    margin: 0;
+}
+
+.config-content h4 {
+    color: var(--primary-blue);
+    margin-bottom: 1rem;
+    font-family: var(--font-heading);
+}
+
+.troubleshooting {
+    padding: 5rem 0;
+    background: var(--dark-bg);
+}
+
+.troubleshooting-list {
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.trouble-item {
+    background: var(--card-bg);
+    border: 1px solid var(--warcraft-bronze);
+    border-radius: 8px;
+    padding: 2rem;
+    border-left: 4px solid var(--primary-gold);
+}
+
+.trouble-item h4 {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    color: var(--primary-gold);
+    margin-bottom: 1rem;
+    font-family: var(--font-heading);
+}
+
+.trouble-item p {
+    color: var(--text-gray);
+    line-height: 1.5;
+    margin-bottom: 0.5rem;
+}
+
+.trouble-item code {
+    background: var(--darker-bg);
+    color: var(--primary-blue);
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+    font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+}
+
+.developers-cta {
+    padding: 4rem 0;
+    background: 
+        linear-gradient(135deg, var(--warcraft-stone) 0%, var(--dark-bg) 100%);
+}
+
 /* Fantasy Icon System */
 .fantasy-icon {
     display: inline-flex;
