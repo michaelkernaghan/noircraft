@@ -1,0 +1,31 @@
+# Netlify Configuration for Private Voting DApp
+
+[build]
+  # No build needed - static HTML/CSS/JS
+  publish = "."
+
+[[redirects]]
+  # SPA fallback (if needed in future)
+  from = "/*"
+  to = "/index.html"
+  status = 200
+  force = false
+
+[[headers]]
+  # Security headers
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-Content-Type-Options = "nosniff"
+    X-XSS-Protection = "1; mode=block"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+
+    # Allow MetaMask and wallet connections
+    Content-Security-Policy = """
+      default-src 'self';
+      script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdn.jsdelivr.net;
+      style-src 'self' 'unsafe-inline';
+      img-src 'self' data: https:;
+      connect-src 'self' https://*.aztec.network https://*.infura.io https://*.metamask.io;
+      frame-src 'none';
+    """
