@@ -6,9 +6,7 @@ voter_secret = "12345"  # Voter's secret key
 # Public inputs (visible on-chain)
 proposal_id = "1"       # Proposal #1
 
-# These would be computed by the voter's wallet
-# nullifier = hash(voter_secret, proposal_id)
-# vote_commitment = hash(vote, voter_secret)
-# For this example, we'll let the circuit verify them
-nullifier = "0x0000000000000000000000000000000000000000000000000000000000000001"
-vote_commitment = "0x0000000000000000000000000000000000000000000000000000000000000001"
+# These are computed as: pedersen_hash([voter_secret, proposal_id])
+# For now, use placeholder - in real usage, compute these values
+nullifier = "0"
+vote_commitment = "0"
