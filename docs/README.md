@@ -13,6 +13,13 @@ docs/
 │   ├── aztec_focused_summary.md  # Aztec ecosystem summary
 │   ├── plonk_explained.md        # PLONK proof system
 │   └── dalhousie_plonk_noir_aztec_research.md # Academic research
+├── deployment/                # Deployment & version management
+│   ├── deployment_guide.md       # Netlify deployment guide
+│   └── version_readme.md         # Version management docs
+├── planning/                  # Development planning docs
+│   ├── extract_icons.md          # Icon extraction guide
+│   ├── warcraft_icons_plan.md    # Icon planning document
+│   └── fix_errors.md             # Error fixing reference
 ├── SNARK_EXPLORATION_GUIDE.md    # SNARK fundamentals
 ├── SNARK_QUICK_START.md          # Quick start guide
 ├── awesome_noir_resources.md     # Curated resources
@@ -68,6 +75,12 @@ cd my_project
 nargo test
 nargo prove
 ```
+
+### Deployment & Operations
+
+- **[Deployment Guide](deployment/deployment_guide.md)** - Deploy to Netlify
+- **[Version Management](deployment/version_readme.md)** - Version control workflow
+- **[Build Scripts](../scripts/)** - Automation scripts
 
 ### Common Patterns
 - **Nullifier Schemes** - Prevent double-spending

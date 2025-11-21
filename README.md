@@ -39,7 +39,9 @@ noircraft/
 │   └── bls/                   # BLS signature demos
 ├── docs/                      # Documentation
 │   ├── guides/                # Step-by-step tutorials
-│   └── research/              # Technical research
+│   ├── deployment/            # Deployment guides
+│   └── planning/              # Development planning
+├── scripts/                    # Build & deployment scripts
 └── assets/                    # Project assets (logos, images)
 ```
 
@@ -98,10 +100,12 @@ nargo prove
 
 ## 📚 Documentation
 
-- **[Deployment Guide](DEPLOYMENT.md)** - How to deploy to Netlify
+- **[Documentation Hub](docs/)** - Complete documentation index
+- **[Deployment Guide](docs/deployment/deployment_guide.md)** - Deploy to Netlify
 - **[Contract Templates](contracts/templates/)** - Ready-to-use Noir contracts
 - **[Examples](examples/)** - Educational demos and tutorials
 - **[Guides](docs/guides/)** - Step-by-step tutorials
+- **[Scripts](scripts/)** - Build and deployment automation
 
 ## 🎮 Website Features
 
