@@ -51,14 +51,16 @@ function setupWalletConnection() {
 
     connectButton.addEventListener('click', async () => {
         try {
-            // Check if MetaMask is installed
-            if (typeof window.ethereum === 'undefined') {
-                alert('Please install MetaMask to use this DApp');
+            // Multiple ways to detect MetaMask
+            const provider = detectMetaMask();
+
+            if (!provider) {
+                alert('MetaMask not detected!\n\nPlease ensure:\n1. MetaMask is installed\n2. You\'re using Chrome/Firefox/Brave\n3. Try refreshing the page\n\nOr you can vote without connecting a wallet!');
                 return;
             }
 
             // Request account access
-            const accounts = await window.ethereum.request({
+            const accounts = await provider.request({
                 method: 'eth_requestAccounts'
             });
 
@@ -75,9 +77,40 @@ function setupWalletConnection() {
 
         } catch (error) {
             console.error('Error connecting wallet:', error);
-            alert('Failed to connect wallet');
+
+            if (error.code === 4001) {
+                alert('Connection rejected. Please approve the connection in MetaMask.');
+            } else {
+                alert('Failed to connect wallet: ' + error.message);
+            }
         }
     });
+}
+
+/**
+ * Detect MetaMask provider (multiple methods)
+ */
+function detectMetaMask() {
+    // Method 1: Standard window.ethereum
+    if (typeof window.ethereum !== 'undefined') {
+        console.log('MetaMask detected via window.ethereum');
+        return window.ethereum;
+    }
+
+    // Method 2: Legacy web3
+    if (typeof window.web3 !== 'undefined' && window.web3.currentProvider) {
+        console.log('MetaMask detected via web3');
+        return window.web3.currentProvider;
+    }
+
+    // Method 3: Check for MetaMask specifically
+    if (window.ethereum && window.ethereum.isMetaMask) {
+        console.log('MetaMask detected via isMetaMask flag');
+        return window.ethereum;
+    }
+
+    console.log('MetaMask not detected');
+    return null;
 }
 
 /**
