@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Private Voting DApp - Noircraft</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🗳️ Private Voting DApp</h1>
+            <p>Vote anonymously with zero-knowledge proofs powered by Noir & Aztec</p>
+        </header>
+
+        <div class="wallet-section">
+            <button id="connect-wallet" class="btn btn-primary">
+                🔗 Connect Wallet
+            </button>
+            <div id="wallet-info" style="display: none;">
+                <span id="wallet-address"></span>
+            </div>
+        </div>
+
+        <main>
+            <div class="proposal-card">
+                <div class="proposal-header">
+                    <h2>Proposal #1</h2>
+                    <span class="badge">Active</span>
+                </div>
+
+                <div class="proposal-content">
+                    <h3>Should we increase the community fund allocation by 20%?</h3>
+                    <p class="proposal-description">
+                        This proposal suggests increasing the community fund from 100,000 tokens to 120,000 tokens
+                        to support more community initiatives and grants.
+                    </p>
+
+                    <div class="proposal-meta">
+                        <div class="meta-item">
+                            <span class="label">Ends:</span>
+                            <span class="value">December 31, 2025</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="label">Total Votes:</span>
+                            <span class="value" id="total-votes">0</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="voting-section">
+                    <h4>Cast Your Vote</h4>
+                    <p class="privacy-note">
+                        ✓ Your vote is completely private<br>
+                        ✓ Nobody can see how you voted<br>
+                        ✓ Your identity remains anonymous
+                    </p>
+
+                    <div id="voting-buttons" class="vote-buttons">
+                        <button class="btn btn-yes" onclick="castVote(1)">
+                            <span class="icon">✓</span>
+                            Vote Yes
+                        </button>
+                        <button class="btn btn-no" onclick="castVote(0)">
+                            <span class="icon">✗</span>
+                            Vote No
+                        </button>
+                    </div>
+
+                    <div id="loading" class="loading" style="display: none;">
+                        <div class="spinner"></div>
+                        <p id="loading-message">Generating zero-knowledge proof...</p>
+                    </div>
+
+                    <div id="status" class="status" style="display: none;">
+                        <div class="status-icon">
+                            <span id="status-emoji"></span>
+                        </div>
+                        <p id="status-message"></p>
+                        <a id="tx-link" href="#" target="_blank" style="display: none;">
+                            View Transaction →
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="info-cards">
+                <div class="info-card">
+                    <h3>🔐 How It Works</h3>
+                    <ol>
+                        <li><strong>Cast Your Vote:</strong> Choose Yes or No</li>
+                        <li><strong>Generate Proof:</strong> Zero-knowledge proof created locally</li>
+                        <li><strong>Submit Privately:</strong> Vote recorded without revealing your choice</li>
+                        <li><strong>Verify:</strong> Anyone can verify votes are valid, but not see them</li>
+                    </ol>
+                </div>
+
+                <div class="info-card">
+                    <h3>🛡️ Privacy Features</h3>
+                    <ul>
+                        <li>✓ Votes are never revealed on-chain</li>
+                        <li>✓ Identity remains completely private</li>
+                        <li>✓ Nullifiers prevent double voting</li>
+                        <li>✓ Cryptographically verified proofs</li>
+                        <li>✓ No trusted third parties needed</li>
+                    </ul>
+                </div>
+
+                <div class="info-card">
+                    <h3>⚡ Powered By</h3>
+                    <div class="tech-badges">
+                        <span class="tech-badge">Noir</span>
+                        <span class="tech-badge">Aztec</span>
+                        <span class="tech-badge">Zero-Knowledge</span>
+                        <span class="tech-badge">Noircraft</span>
+                    </div>
+                    <p style="margin-top: 15px; font-size: 14px;">
+                        Built with <a href="https://noir-lang.org" target="_blank">Noir</a>
+                        and deployed on <a href="https://aztec.network" target="_blank">Aztec</a>
+                    </p>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <p>
+                Built with ❤️ by <a href="https://noircraft.io" target="_blank">Noircraft</a>
+                | <a href="https://github.com/michaelkernaghan/noircraft" target="_blank">GitHub</a>
+            </p>
+        </footer>
+    </div>
+
+    <script src="voting.js"></script>
+</body>
+</html>
