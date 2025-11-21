@@ -6,16 +6,33 @@ This directory contains production-ready Noir contract templates for privacy-pre
 
 ```
 contracts/
-├── templates/          # Ready-to-deploy contract templates
-│   └── example_project/  # Basic Noir project template
-└── demos/             # Example contract implementations
+├── templates/              # Ready-to-deploy contract templates
+│   └── example_project/    # Basic Noir project template
+├── private_voting_demo/    # 🗳️ Complete voting demo (READY TO RUN!)
+└── demos/                  # Additional example implementations
 ```
 
 ## 🚀 Available Templates
 
-### 🗳️ Private Voting
+### ✨ NEW: Private Voting Demo (Complete & Ready!)
+
+- **Directory**: `private_voting_demo/`
+- **Status**: ✅ Complete working example
+- **Description**: Full anonymous voting implementation with tests
+- **Difficulty**: Beginner-friendly
+- **Use Cases**: DAO governance, elections, polls, surveys
+- **Features**:
+  - ✅ 5 comprehensive tests included
+  - ✅ Complete documentation (README + QUICKSTART + ARCHITECTURE)
+  - ✅ Visual diagrams and explanations
+  - ✅ Prevents double voting with nullifiers
+  - ✅ Full privacy with zero-knowledge proofs
+- **Quick Start**: See [private_voting_demo/QUICKSTART.md](private_voting_demo/QUICKSTART.md)
+
+### 🗳️ Private Voting (Template)
+
 - **File**: `templates/private_voting/`
-- **Description**: Anonymous voting with nullifier prevention
+- **Description**: Minimal template for anonymous voting
 - **Difficulty**: Beginner
 - **Use Cases**: DAO governance, elections, polls
 

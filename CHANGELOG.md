@@ -23,10 +23,25 @@
   - Removed `website/community.html` (page was previously removed)
   - Removed `.qodo/` directory (unused AI workflow)
 
+### Added
+
+- **Private Voting Demo Contract**: Complete production-ready Noir contract
+  - `contracts/private_voting_demo/` - Full anonymous voting implementation
+  - 110 lines of Noir code with 5 comprehensive tests
+  - Complete documentation suite (20KB+ of guides)
+  - README.md - Full feature documentation and examples
+  - QUICKSTART.md - 5-minute getting started guide
+  - ARCHITECTURE.md - Visual architecture and data flow diagrams
+  - INSTALL_NOIR.md - Installation guide for Windows
+  - DEPLOY_AZTEC.md - Complete Aztec testnet deployment guide
+  - Demonstrates: Nullifiers, commitments, zero-knowledge proofs
+  - Features: Double-vote prevention, full privacy, cryptographic security
+
 ### Documentation
 
 - Updated `docs/README.md` with new directory structure
 - Updated main `README.md` to reflect reorganized structure
+- Updated `contracts/README.md` to feature the new voting demo
 - All documentation links updated to point to new locations
 
 ## [Previous] - 2025-10-24
