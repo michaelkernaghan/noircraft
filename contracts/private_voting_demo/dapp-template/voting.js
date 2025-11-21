@@ -154,7 +154,7 @@ async function castVote(vote) {
         });
 
         // Success!
-        showStatus('success', `Vote submitted successfully!`, result.txHash);
+        showStatus('success', `<strong>Vote submitted successfully!</strong><br><small style="opacity: 0.8;">🎮 Demo Mode - Your vote was recorded locally</small>`, result.txHash);
 
         // Reload vote counts
         setTimeout(() => loadVoteResults(), 2000);
@@ -306,7 +306,7 @@ function showStatus(type, message, txHash = null) {
     const txLink = document.getElementById('tx-link');
 
     statusDiv.style.display = 'block';
-    statusMessage.textContent = message;
+    statusMessage.innerHTML = message; // Changed to innerHTML to support line breaks
 
     // Set emoji and styling based on type
     switch (type) {
@@ -318,9 +318,18 @@ function showStatus(type, message, txHash = null) {
             // Mark as voted
             localStorage.setItem(`voted_${CONFIG.proposalId}`, 'true');
 
+            // In demo mode, show demo message instead of broken link
             if (txHash) {
-                txLink.href = CONFIG.explorerUrl + txHash;
+                txLink.textContent = '📋 Demo Mode - No Real Transaction';
+                txLink.href = '#';
                 txLink.style.display = 'block';
+                txLink.style.cursor = 'default';
+                txLink.style.opacity = '0.7';
+
+                txLink.onclick = (e) => {
+                    e.preventDefault();
+                    alert('This is a demo!\n\nIn production mode, this would link to your transaction on the Aztec blockchain explorer.\n\nTo enable real transactions:\n1. Deploy the backend API\n2. Connect to Aztec testnet\n3. See IMPLEMENTATION.md for details');
+                };
             }
             break;
 
@@ -328,12 +337,14 @@ function showStatus(type, message, txHash = null) {
             statusEmoji.textContent = '✗';
             statusDiv.style.background = '#ffebee';
             statusDiv.style.border = '2px solid #f44336';
+            txLink.style.display = 'none';
             break;
 
         case 'info':
             statusEmoji.textContent = 'ℹ';
             statusDiv.style.background = '#e3f2fd';
             statusDiv.style.border = '2px solid #2196F3';
+            txLink.style.display = 'none';
             break;
     }
 }
