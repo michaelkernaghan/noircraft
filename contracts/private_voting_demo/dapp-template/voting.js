@@ -5,7 +5,7 @@
 
 // Configuration
 const CONFIG = {
-    apiUrl: 'http://localhost:3000/api',
+    apiUrl: 'https://noircraft-production.up.railway.app/api',
     explorerUrl: 'https://explorer.aztec.network/tx/',
     proposalId: 1
 };
