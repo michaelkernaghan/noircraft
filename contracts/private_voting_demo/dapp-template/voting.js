@@ -368,5 +368,15 @@ function generateRandomHex(length) {
     return result;
 }
 
+/**
+ * Reset demo - clear all data and reload
+ */
+function resetDemo() {
+    if (confirm('Reset demo and clear all data?\n\nThis will:\n- Clear your voting history\n- Reset your voter secret\n- Allow you to vote again')) {
+        localStorage.clear();
+        location.reload();
+    }
+}
+
 // Initialize on page load
 window.addEventListener('load', init);
