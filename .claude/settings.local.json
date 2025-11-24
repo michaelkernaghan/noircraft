@@ -1,0 +1,43 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(cd:*)",
+      "Bash(tree:*)",
+      "Bash(mkdir:*)",
+      "Bash(git mv:*)",
+      "Bash(git rm:*)",
+      "Bash(if [ -f \"website/community.html\" ])",
+      "Bash(then git rm website/community.html)",
+      "Bash(else echo \"File already removed\")",
+      "Bash(fi)",
+      "Bash(if [ -d \".qodo\" ])",
+      "Bash(then git rm -rf .qodo)",
+      "Bash(else echo \"Directory already removed\")",
+      "Bash(rm:*)",
+      "Bash(git add:*)",
+      "Bash(git push:*)",
+      "Bash(git commit:*)",
+      "Bash(nargo --version:*)",
+      "Bash(where.exe:*)",
+      "Bash(nul)",
+      "Bash(where.exe powershell)",
+      "Bash(pwsh -Command \"irm https://raw.githubusercontent.com/noir-lang/noir/master/install.ps1 | iex\")",
+      "Bash(ssh:*)",
+      "Bash(cat:*)",
+      "Bash(explorer \"c:\\Users\\Michael Kernaghan\\noircraft\\contracts\\private_voting_demo\")",
+      "Bash(dir \"c:\\Users\\Michael Kernaghan\\noircraft\\contracts\\private_voting_demo\")",
+      "Bash(start index.html)",
+      "Bash(npx serve -l 8000 .)",
+      "Bash(timeout:*)",
+      "Bash(start http://localhost:8000)",
+      "Bash(netlify:*)",
+      "Bash(npx netlify-cli:*)",
+      "Bash(start https://app.netlify.com/drop)",
+      "Bash(explorer \"c:\\Users\\Michael Kernaghan\\noircraft\\contracts\\private_voting_demo\\dapp-template\")",
+      "Bash(start \"\" \"c:\\Users\\Michael Kernaghan\\noircraft\\contracts\\private_voting_demo\\dapp-template\")",
+      "Bash(curl:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}
